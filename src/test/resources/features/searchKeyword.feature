@@ -11,4 +11,4 @@ Feature: Search a keyword
     @demo @fail
     Examples:
       | keyword  |
-      | ABC    |
+      | ABC      |
