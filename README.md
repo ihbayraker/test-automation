@@ -2,6 +2,7 @@
 - This project is a Selenium BDD Framework that can be used to automate web browsers.
 - It's configured to run a simple showcase out of the box.
 - To execute it run **mvn clean verify**.
+- After the execution the report of the results can be found in **cucumber-html-report** folder.
 # Configuration
 - There are several configurable files in the project to further customize the execution environment.
 - An example **testframework.properties** file is shown below.
