@@ -7,7 +7,9 @@ public class TearDownUtils {
 
     public static void openHtmlReport() throws Exception {
         File htmlFile = new File("target/cucumber-html-reports/overview-features.html");
-        Desktop.getDesktop().browse(htmlFile.toURI());
+        if(htmlFile.exists()){
+            Desktop.getDesktop().browse(htmlFile.toURI());
+        }
     }
 
     public static void killDrivers() throws Exception {
