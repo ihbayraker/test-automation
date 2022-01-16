@@ -1,7 +1,7 @@
 # Getting Started
 - This project is a Selenium BDD Framework that can be used to automate web browsers.
 - It's configured to run a simple showcase out of the box.
-- To execute it run **mvn clean verify exec:java -Dexec.mainClass=com.testautomation.TearDown**.
+- To execute it locally run **clean verify exec:java -Dexec.mainClass=com.testautomation.TearDown -Dcucumber.reporting.skip=false**.
 - After the execution the report of the results can be found in **cucumber-html-report** folder.
 # Configuration
 - There are several configurable files in the project to further customize the execution environment.

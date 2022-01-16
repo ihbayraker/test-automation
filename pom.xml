@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <cucumber.reporting.skip>false</cucumber.reporting.skip>
+        <cucumber.reporting.skip>true</cucumber.reporting.skip>
     </properties>
 
     <dependencies>

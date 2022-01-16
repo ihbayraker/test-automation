@@ -5,9 +5,6 @@ import com.testautomation.utils.WebDriverUtils;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.apache.log4j.PropertyConfigurator;
-
-import java.util.logging.Level;
 
 public class Hooks {
     private static Scenario scenario;
@@ -22,11 +19,8 @@ public class Hooks {
 
     @Before
     public void beforeScenario(Scenario scenario) {
-        String log4jConfPath = "src/test/resources/log4j.properties";
-        PropertyConfigurator.configure(log4jConfPath);
-        java.util.logging.Logger.getLogger("org.openqa.selenium").setLevel(Level.OFF);
-
         Hooks.scenario = scenario;
+        LogUtils.initLogger();
         LogUtils.logInfo("Running Scenario: "+getScenarioName());
     }
 
