@@ -23,7 +23,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <cucumber.reporting.skip>true</cucumber.reporting.skip>
+        <cucumber.reporting.skip>false</cucumber.reporting.skip>
+        <exec.mainClass>com.testautomation.AfterTest</exec.mainClass>
     </properties>
 
     <dependencies>
@@ -111,12 +112,12 @@
             <executions>
                 <execution>
                     <id>execution</id>
-                    <phase>verify</phase>
+                    <phase>test</phase>
                     <goals>
                         <goal>generate</goal>
                     </goals>
                     <configuration>
-                        <projectName>Cucumber HTML Reports</projectName>
+                        <projectName>Test Results</projectName>
                         <outputDirectory>${project.build.directory}</outputDirectory>
                         <inputDirectory>${project.build.directory}</inputDirectory>
                         <checkBuildResult>false</checkBuildResult>
