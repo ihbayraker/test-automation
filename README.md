@@ -12,6 +12,7 @@ mvn clean test exec:java
 ```sh
 browser=chrome
 headless=true
+environment=automationpractice
 ```
 - **browser** determines the webdriver that's going to be used currently chrome, firefox, opera and edge is supported.
 - **headless** is a boolean value, will determine if the webdriver going to be used headless or not.

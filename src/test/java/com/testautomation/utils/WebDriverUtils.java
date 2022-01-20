@@ -49,4 +49,14 @@ public class WebDriverUtils {
 
         scenario.attach(image,"image/jpeg",name);
     }
+
+    public static void killDrivers() throws Exception {
+        String browser = PropertiesUtils.getTestFrameworkProperty("browser");
+        switch (browser) {
+            case "chrome" -> Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe");
+            case "firefox" -> Runtime.getRuntime().exec("taskkill /F /IM geckodriver.exe");
+            case "opera" -> Runtime.getRuntime().exec("taskkill /F /IM operadriver.exe");
+            case "edge" -> Runtime.getRuntime().exec("taskkill /F /IM msedgedriver.exe");
+        }
+    }
 }

@@ -2,9 +2,9 @@ package com.testautomation.pageobjects.interfaces;
 
 public interface AutomationpracticePageObjectsInterface extends PageObjectInterface {
 
-    void navigateToHomepage();
+    void navigateToHomepage() throws Exception;
 
-    void searchKeyword(String keyword);
+    void searchKeyword(String keyword) throws Exception;
 
-    String getFirstProduct();
+    String getFirstProduct() throws Exception;
 }

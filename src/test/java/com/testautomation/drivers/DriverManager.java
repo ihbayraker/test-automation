@@ -3,7 +3,7 @@ package com.testautomation.drivers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import com.testautomation.utils.PropertiesFactory;
+import com.testautomation.utils.PropertiesUtils;
 
 
 public abstract class DriverManager {
@@ -20,7 +20,7 @@ public abstract class DriverManager {
             caps.setAcceptInsecureCerts(true);
             caps.setCapability(CapabilityType.TAKES_SCREENSHOT,true);
 
-            if(PropertiesFactory.getTestFramework("headless").equals("true")){
+            if(PropertiesUtils.getTestFrameworkProperty("headless").equals("true")){
                 isHeadless = true;
             }
 

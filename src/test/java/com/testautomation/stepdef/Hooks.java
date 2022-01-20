@@ -20,7 +20,6 @@ public class Hooks {
     @Before
     public void beforeScenario(Scenario scenario) {
         Hooks.scenario = scenario;
-        LogUtils.initLogger();
         LogUtils.logInfo("Running Scenario: "+getScenarioName());
     }
 

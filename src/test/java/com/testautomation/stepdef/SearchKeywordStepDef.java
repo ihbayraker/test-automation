@@ -15,17 +15,17 @@ public class SearchKeywordStepDef {
     }
 
     @Given("I go to the homepage")
-    public void iGoToTheHomepage(){
+    public void iGoToTheHomepage() throws Exception {
         automationpracticePageObjects.navigateToHomepage();
     }
 
     @And("i search the {string}")
-    public void iSearchThe(String keyword){
+    public void iSearchThe(String keyword) throws Exception {
         automationpracticePageObjects.searchKeyword(keyword);
     }
 
     @Then("I record the first product")
-    public void iRecordTheFirstProduct(){
+    public void iRecordTheFirstProduct() throws Exception {
         Helper.scenarioWrite(Hooks.getScenario(),automationpracticePageObjects.getFirstProduct(),"Product Name");
     }
 
