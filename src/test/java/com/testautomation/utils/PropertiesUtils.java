@@ -5,35 +5,32 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class PropertiesUtils {
-    private static final Properties testFramework = new Properties();
+    private static final Properties pom = new Properties();
     private static final Properties environment = new Properties();
 
-    private static void setTestFramework() throws Exception {
-        File file = new File("testframework.properties");
+    private static void setPom() throws Exception {
+        File file = new File("target/test-classes/pom.properties");
 
         FileInputStream fileInputStream = new FileInputStream(file);
-        testFramework.load(fileInputStream);
+        pom.load(fileInputStream);
         fileInputStream.close();
     }
 
-    private static void setEnvironment(String env) throws Exception {
+    public static void setEnvironment(String env) throws Exception {
         File file = new File("target/test-classes/properties/"+env+".properties");
         FileInputStream fileInputStream = new FileInputStream(file);
         environment.load(fileInputStream);
         fileInputStream.close();
     }
 
-    public static String getTestFrameworkProperty(String key) throws Exception {
-        if(testFramework.isEmpty()){
-            setTestFramework();
+    public static String getPomProperty(String key) throws Exception {
+        if(pom.isEmpty()){
+            setPom();
         }
-        return testFramework.getProperty(key);
+        return pom.getProperty(key);
     }
 
     public static String getEnvironmentProperty(String key) throws Exception {
-        if(environment.isEmpty()){
-            setEnvironment(getTestFrameworkProperty("environment"));
-        }
         return environment.getProperty(key);
     }
 }

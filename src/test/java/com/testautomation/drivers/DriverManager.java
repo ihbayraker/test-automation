@@ -20,7 +20,7 @@ public abstract class DriverManager {
             caps.setAcceptInsecureCerts(true);
             caps.setCapability(CapabilityType.TAKES_SCREENSHOT,true);
 
-            if(PropertiesUtils.getTestFrameworkProperty("headless").equals("true")){
+            if(PropertiesUtils.getPomProperty("headless").equals("true")){
                 isHeadless = true;
             }
 

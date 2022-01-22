@@ -8,6 +8,7 @@ public class AutomationpracticePageObjects extends PageObject implements Automat
 
     public AutomationpracticePageObjects() throws Exception {
         super();
+        PropertiesUtils.setEnvironment("automationpractice");
     }
 
     @Override

@@ -51,7 +51,7 @@ public class WebDriverUtils {
     }
 
     public static void killDrivers() throws Exception {
-        String browser = PropertiesUtils.getTestFrameworkProperty("browser");
+        String browser = PropertiesUtils.getPomProperty("browser");
         switch (browser) {
             case "chrome" -> Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe");
             case "firefox" -> Runtime.getRuntime().exec("taskkill /F /IM geckodriver.exe");
