@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <selenium.version>4.1.1</selenium.version>
+        <selenium.version>4.1.2</selenium.version>
         <cucumber.version>7.2.3</cucumber.version>
         <junit.version>5.8.2</junit.version>
         <webdrivermanager.version>5.0.3</webdrivermanager.version>
@@ -28,7 +28,7 @@
         <exec.mainClass>com.testautomation.Main</exec.mainClass>
 
         <browser>chrome</browser>
-        <headless>false</headless>
+        <headless>true</headless>
     </properties>
 
     <dependencies>
