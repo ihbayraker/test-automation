@@ -19,8 +19,11 @@ public class WebDriverUtils {
     private static WebDriver browser = null;
 
     public static WebDriver startDriver() throws Exception {
-        DriverManager driverManager = DriverFactory.getDriverManager();
-        browser = driverManager.getWebDriver();
+        if(browser==null){
+            DriverManager driverManager = DriverFactory.getDriverManager();
+            browser = driverManager.getWebDriver();
+            manageDriver(20,10);
+        }
         return browser;
     }
 
@@ -34,6 +37,7 @@ public class WebDriverUtils {
     public static void quitWebDriver(){
         if (null != browser){
             browser.quit();
+            browser = null;
         }
     }
     public static void takeScreenshot(Scenario scenario, String name) throws Exception {

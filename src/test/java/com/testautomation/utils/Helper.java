@@ -2,13 +2,9 @@ package com.testautomation.utils;
 
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.time.Duration;
 
 public class Helper {
@@ -24,8 +20,19 @@ public class Helper {
         return wait;
     }
 
+
     private static WebElement findElementByXpath(String xpath, WebDriver driver){
         return driver.findElement(By.xpath(xpath));
+    }
+
+    private static void scrollElement(String xpath, WebDriver driver) {
+        WebElement webElement = findElementByXpath(xpath,driver);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", webElement);
+    }
+
+    private static void clearText(String xpath, WebDriver driver) {
+        WebElement webElement = findElementByXpath(xpath,driver);
+        webElement.clear();
     }
 
     public static void WaitForElementPresentByXpath(String xpath, WebDriver driver){
@@ -34,11 +41,33 @@ public class Helper {
     }
 
     public static void clickByXpath(String xpath, WebDriver driver){
+        scrollElement(xpath, driver);
         findElementByXpath(xpath, driver).click();
     }
 
+    public static void doubleClickByXpath(String xpath, WebDriver driver){
+        Actions actions = new Actions(driver);
+
+        scrollElement(xpath, driver);
+        actions.doubleClick(findElementByXpath(xpath,driver)).perform();
+    }
+
+    public static void rightClickByXpath(String xpath, WebDriver driver){
+        Actions actions = new Actions(driver);
+
+        scrollElement(xpath, driver);
+        actions.contextClick(findElementByXpath(xpath,driver)).perform();
+    }
+
     public static void sendKeysByXpath(String xpath, WebDriver driver, String keys){
+        scrollElement(xpath, driver);
+        clearText(xpath,driver);
         findElementByXpath(xpath, driver).sendKeys(keys);
+    }
+
+    public static int getElementCount(String xpath, WebDriver driver){
+        return driver.findElements(By.xpath(xpath)).size();
+
     }
 
     public static String getTextByXpath(String xpath, WebDriver driver){

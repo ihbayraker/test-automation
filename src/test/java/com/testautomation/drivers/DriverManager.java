@@ -27,6 +27,5 @@ public abstract class DriverManager {
             createWebDriver();
         }
         return driver;
-
     }
 }
