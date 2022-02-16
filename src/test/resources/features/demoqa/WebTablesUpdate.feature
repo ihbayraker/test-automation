@@ -1,4 +1,4 @@
-@all @demoqa
+@all @web @demoqa
 Feature: Update an existing entry in Web Table
 
   Scenario Outline: Update an existing entry in Web Table

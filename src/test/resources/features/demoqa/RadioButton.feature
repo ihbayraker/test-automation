@@ -1,4 +1,4 @@
-@all @demoqa
+@all @web @demoqa
 Feature: Check Radio Buttons
 
   Scenario: Check Radio Buttons

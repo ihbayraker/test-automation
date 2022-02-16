@@ -17,7 +17,7 @@ public class PropertiesUtils {
     }
 
     public static void setEnvironment(String env) throws Exception {
-        File file = new File("target/test-classes/properties/"+env+".properties");
+        File file = new File("target/test-classes/"+env+".properties");
         FileInputStream fileInputStream = new FileInputStream(file);
         environment.load(fileInputStream);
         fileInputStream.close();
@@ -30,7 +30,7 @@ public class PropertiesUtils {
         return pom.getProperty(key);
     }
 
-    public static String getEnvironmentProperty(String key) throws Exception {
+    public static String getEnvironmentProperty(String key) {
         return environment.getProperty(key);
     }
 }

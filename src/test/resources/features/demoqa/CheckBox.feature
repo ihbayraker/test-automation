@@ -1,4 +1,4 @@
-@all @demoqa
+@all @web @demoqa
 Feature: Toggle Check Boxes
 
   Scenario: Toggle check Boxes

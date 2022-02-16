@@ -60,4 +60,12 @@ public interface DemoqaElementsPageObjectsInterface extends PageObjectInterface 
     void writeClickResults() throws Exception;
 
     boolean clickApiCallLinkAndRecordStatus(String api) throws Exception;
+
+    void pressDownloadFile();
+
+    boolean checkFileDownloaded(String fileName) throws Exception;
+
+    void uploadDownloadedFile(String fileName);
+
+    void checkFileUploadedAndErase(String fileName);
 }

@@ -5,6 +5,8 @@ import com.testautomation.stepdef.Hooks;
 import com.testautomation.utils.Helper;
 import com.testautomation.utils.PropertiesUtils;
 
+import java.io.File;
+
 public class DemoqaElementsPageObjects extends PageObject implements DemoqaElementsPageObjectsInterface {
 
     public DemoqaElementsPageObjects() throws Exception {
@@ -237,5 +239,37 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
             }
         }
         return false;
+    }
+
+    @Override
+    public void pressDownloadFile() {
+        Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("fileDownloadButtonXpath"),browser);
+    }
+
+    @Override
+    public boolean checkFileDownloaded(String fileName) throws Exception {
+        File downloadedFile = new File(System.getProperty("user.dir") + File.separator + "target" + File.separator + fileName);
+        for(int i=0; i<10; i++){
+            if(downloadedFile.exists()){
+                return true;
+            }else{
+                Thread.sleep(100);
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public void uploadDownloadedFile(String fileName) {
+        String filePath = System.getProperty("user.dir") + File.separator + "target" + File.separator + fileName;
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("fileUploadButtonXpath"),browser,filePath);
+    }
+
+    @Override
+    public void checkFileUploadedAndErase(String fileName) {
+        File downloadedFile = new File(System.getProperty("user.dir") + File.separator + "target" + File.separator + fileName);
+        Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("fileUploadedMessageXpath"),browser);
+        downloadedFile.delete();
+
     }
 }

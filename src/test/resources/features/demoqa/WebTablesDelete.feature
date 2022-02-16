@@ -1,4 +1,4 @@
-@all @demoqa
+@all @web @demoqa
 Feature: Delete an entry from the Web table
 
   Scenario: Delete an entry from the Web table

@@ -1,7 +1,7 @@
-@all @demoqa
-Feature: I click links to get api calls
+@all @web @demoqa
+Feature: Click links to get api calls
 
-  Scenario: I click links to get api calls
+  Scenario: Click links to get api calls
     Given I navigate to elements page
     And I click Links
     Then I click created then check its api call
