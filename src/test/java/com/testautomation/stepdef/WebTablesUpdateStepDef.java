@@ -12,7 +12,7 @@ public class WebTablesUpdateStepDef {
     }
 
     @Then("I press update for recorded entry")
-    public void iPressUpdateForRecordedEntry() throws Exception {
+    public void iPressUpdateForRecordedEntry(){
         demoqaElementsPageObjects.updateEntry(1);
     }
 }

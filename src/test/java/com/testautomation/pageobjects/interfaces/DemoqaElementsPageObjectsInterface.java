@@ -3,61 +3,61 @@ package com.testautomation.pageobjects.interfaces;
 public interface DemoqaElementsPageObjectsInterface extends PageObjectInterface {
 
 
-    void typeName(String name) throws Exception;
+    void typeName(String name);
 
-    void typeEmail(String email) throws Exception;
+    void typeEmail(String email);
 
-    void typeCurrentAddress(String address) throws Exception;
+    void typeCurrentAddress(String address);
 
-    void typePermanentAddress(String address) throws Exception;
+    void typePermanentAddress(String address);
 
-    void pressSubmit() throws Exception;
+    void pressSubmit();
 
-    void checkOutput() throws Exception;
+    void checkOutput();
 
-    void unwindNodes(int i) throws Exception;
+    void unwindNodes(int i);
 
-    void toggleNodes(int i) throws Exception;
+    void toggleNodes(int i);
 
-    void checkSelectedNodes() throws Exception;
+    void checkSelectedNodes();
 
-    void checkAButton(int i) throws Exception;
+    void checkAButton(int i);
 
-    void checkRadioButtons() throws Exception;
+    void checkRadioButtons();
 
-    void clickAddRegistration() throws Exception;
+    void clickAddRegistration();
 
-    void fillFirstName(String name) throws Exception;
+    void fillFirstName(String name);
 
-    void fillLastName(String name) throws Exception;
+    void fillLastName(String name);
 
-    void fillEmail(String email) throws Exception;
+    void fillEmail(String email);
 
-    void fillAge(String age) throws Exception;
+    void fillAge(String age);
 
-    void fillSalary(String salary) throws Exception;
+    void fillSalary(String salary);
 
-    void fillDepartment(String department) throws Exception;
+    void fillDepartment(String department);
 
-    void submitRegistration() throws Exception;
+    void submitRegistration();
 
     boolean checkTableBody(String text) throws Exception;
 
-    String getRow(int i) throws Exception;
+    String getRow(int i);
 
-    void deleteRow(int i) throws Exception;
+    void deleteRow(int i);
 
-    void updateEntry(int i) throws Exception;
+    void updateEntry(int i);
 
-    void recordRow(String text) throws Exception;
+    void recordRow(String text);
 
-    void doDoubleClick() throws Exception;
+    void doDoubleClick();
 
-    void doRightClick() throws Exception;
+    void doRightClick();
 
-    void doNormalClick() throws Exception;
+    void doNormalClick();
 
-    void writeClickResults() throws Exception;
+    void writeClickResults();
 
     boolean clickApiCallLinkAndRecordStatus(String api) throws Exception;
 

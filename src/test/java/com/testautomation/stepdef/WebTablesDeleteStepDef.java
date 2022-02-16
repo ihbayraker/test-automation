@@ -15,12 +15,12 @@ public class WebTablesDeleteStepDef {
     }
 
     @Then("I record an entry")
-    public void iRecordAnEntry() throws Exception {
+    public void iRecordAnEntry(){
         entry = demoqaElementsPageObjects.getRow(1);
     }
 
     @And("I delete the recorded entry")
-    public void iDeleteTheRecordedEntry() throws Exception {
+    public void iDeleteTheRecordedEntry(){
         demoqaElementsPageObjects.deleteRow(1);
     }
 

@@ -5,6 +5,11 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.time.Duration;
 
 public class Helper {
@@ -59,9 +64,13 @@ public class Helper {
         actions.contextClick(findElementByXpath(xpath,driver)).perform();
     }
 
-    public static void sendKeysByXpath(String xpath, WebDriver driver, String keys){
+    public static void sendKeysByXpath(String xpath, WebDriver driver, String keys, boolean clear){
         scrollElement(xpath, driver);
-        clearText(xpath,driver);
+
+        if(clear){
+            clearText(xpath,driver);
+        }
+
         findElementByXpath(xpath, driver).sendKeys(keys);
     }
 
@@ -78,4 +87,8 @@ public class Helper {
         scenario.attach(text,"text/plain",name);
     }
 
+    public static void generateDummyImage(int width, int height, String name) throws Exception {
+        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
+        ImageIO.write(image, "jpg", new FileOutputStream(System.getProperty("user.dir") + File.separator + "target" + File.separator + name+".jpg"));
+    }
 }

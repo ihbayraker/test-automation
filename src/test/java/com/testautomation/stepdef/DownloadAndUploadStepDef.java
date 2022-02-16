@@ -17,7 +17,7 @@ public class DownloadAndUploadStepDef {
     }
 
     @And("I click Download and Upload")
-    public void iClickDownloadAndUpload() throws Exception {
+    public void iClickDownloadAndUpload(){
         demoqaHomePageObjects.selectItem(8);
     }
 
@@ -32,12 +32,12 @@ public class DownloadAndUploadStepDef {
     }
 
     @Then("I upload the downloaded file back")
-    public void iUploadTheDownloadedFileBack() throws Exception {
+    public void iUploadTheDownloadedFileBack(){
         demoqaElementsPageObjects.uploadDownloadedFile("sampleFile.jpeg");
     }
 
     @And("I validate that i uploaded the file")
-    public void iValidateThatIUploadedTheFile() throws Exception {
+    public void iValidateThatIUploadedTheFile(){
         demoqaElementsPageObjects.checkFileUploadedAndErase("sampleFile.jpeg");
     }
 }

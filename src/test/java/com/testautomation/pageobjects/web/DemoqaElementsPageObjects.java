@@ -15,103 +15,103 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
     }
 
     @Override
-    public void typeName(String name) throws Exception {
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("textBoxUsernameXpath"),browser,name);
+    public void typeName(String name) {
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("textBoxUsernameXpath"),browser,name,true);
     }
 
     @Override
-    public void typeEmail(String email) throws Exception {
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("textBoxUserEmailXpath"),browser,email);
+    public void typeEmail(String email){
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("textBoxUserEmailXpath"),browser,email,true);
     }
 
     @Override
-    public void typeCurrentAddress(String address) throws Exception {
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("textBoxCurrentAddressXpath"),browser,address);
+    public void typeCurrentAddress(String address){
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("textBoxCurrentAddressXpath"),browser,address,true);
     }
 
     @Override
-    public void typePermanentAddress(String address) throws Exception {
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("textBoxPermanentAddressXpath"),browser,address);
+    public void typePermanentAddress(String address){
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("textBoxPermanentAddressXpath"),browser,address,true);
     }
 
     @Override
-    public void pressSubmit() throws Exception {
+    public void pressSubmit(){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("textBoxSubmitButtonXpath"),browser);
     }
 
     @Override
-    public void checkOutput() throws Exception {
+    public void checkOutput(){
         Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("textBoxOutputXpath"),browser);
         String output = Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("textBoxOutputXpath"),browser);
         Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
     }
 
     @Override
-    public void unwindNodes(int i) throws Exception {
+    public void unwindNodes(int i){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("checkBoxToggleXpath")+"["+i+"]",browser);
     }
 
     @Override
-    public void toggleNodes(int i) throws Exception {
+    public void toggleNodes(int i){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("checkBoxNodeXpath")+"["+i+"]",browser);
     }
 
     @Override
-    public void checkSelectedNodes() throws Exception {
+    public void checkSelectedNodes(){
         Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("checkBoxResultXpath"),browser);
         String output = Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("checkBoxResultXpath"),browser);
         Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
     }
 
     @Override
-    public void checkAButton(int i) throws Exception {
+    public void checkAButton(int i){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("radioButtonSelectionXpath")+"["+i+"]",browser);
     }
 
     @Override
-    public void checkRadioButtons() throws Exception {
+    public void checkRadioButtons(){
         Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("radioButtonSuccessXpath"),browser);
         String output = Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("radioButtonSuccessXpath"),browser);
         Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
     }
 
     @Override
-    public void clickAddRegistration() throws Exception {
+    public void clickAddRegistration(){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("webTablesAddXpath"),browser);
     }
 
     @Override
-    public void fillFirstName(String name) throws Exception {
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("webTablesRegisterFirstNameXpath"),browser,name);
+    public void fillFirstName(String name){
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("webTablesRegisterFirstNameXpath"),browser,name,true);
     }
 
     @Override
-    public void fillLastName(String name) throws Exception {
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("webTablesRegisterLastNameXpath"),browser,name);
+    public void fillLastName(String name){
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("webTablesRegisterLastNameXpath"),browser,name,true);
     }
 
     @Override
-    public void fillEmail(String email) throws Exception {
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("webTablesRegisterEmailXpath"),browser,email);
+    public void fillEmail(String email){
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("webTablesRegisterEmailXpath"),browser,email,true);
     }
 
     @Override
-    public void fillAge(String age) throws Exception {
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("webTablesRegisterAgeXpath"),browser,age);
+    public void fillAge(String age){
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("webTablesRegisterAgeXpath"),browser,age,true);
     }
 
     @Override
-    public void fillSalary(String salary) throws Exception {
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("WebTablesRegisterSalaryXpath"),browser,salary);
+    public void fillSalary(String salary){
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("WebTablesRegisterSalaryXpath"),browser,salary,true);
     }
 
     @Override
-    public void fillDepartment(String department) throws Exception {
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("WebTablesRegisterDepartmentXpath"),browser,department);
+    public void fillDepartment(String department){
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("WebTablesRegisterDepartmentXpath"),browser,department,true);
     }
 
     @Override
-    public void submitRegistration() throws Exception {
+    public void submitRegistration(){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("WebTablesRegisterSubmitXpath"),browser);
     }
 
@@ -131,22 +131,22 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
     }
 
     @Override
-    public String getRow(int i) throws Exception {
+    public String getRow(int i) {
         return Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("WebTablesRowXpath")+"["+i+"]",browser);
     }
 
     @Override
-    public void deleteRow(int i) throws Exception {
+    public void deleteRow(int i){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("webTablesDeleteXpath")+"["+i+"]",browser);
     }
 
     @Override
-    public void updateEntry(int i) throws Exception {
+    public void updateEntry(int i){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("webTablesEditXpath")+"["+i+"]",browser);
     }
 
     @Override
-    public void recordRow(String text) throws Exception {
+    public void recordRow(String text){
         String row = null;
         int rowCount = Helper.getElementCount(PropertiesUtils.getEnvironmentProperty("WebTablesRowXpath"),browser);
 
@@ -161,22 +161,22 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
     }
 
     @Override
-    public void doDoubleClick() throws Exception {
+    public void doDoubleClick(){
         Helper.doubleClickByXpath(PropertiesUtils.getEnvironmentProperty("buttonsDoubleClickXpath"),browser);
     }
 
     @Override
-    public void doRightClick() throws Exception {
+    public void doRightClick(){
         Helper.rightClickByXpath(PropertiesUtils.getEnvironmentProperty("buttonsRightClickXpath"),browser);
     }
 
     @Override
-    public void doNormalClick() throws Exception {
+    public void doNormalClick(){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("buttonsClickXpath"),browser);
     }
 
     @Override
-    public void writeClickResults() throws Exception {
+    public void writeClickResults() {
         StringBuilder stringBuilder = new StringBuilder();
         int messageCount = Helper.getElementCount(PropertiesUtils.getEnvironmentProperty("buttonsClickMessageXpath"),browser);
         for(int i = 1; i<=messageCount; i++){
@@ -262,7 +262,7 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
     @Override
     public void uploadDownloadedFile(String fileName) {
         String filePath = System.getProperty("user.dir") + File.separator + "target" + File.separator + fileName;
-        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("fileUploadButtonXpath"),browser,filePath);
+        Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("fileUploadButtonXpath"),browser,filePath,true);
     }
 
     @Override

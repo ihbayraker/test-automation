@@ -2,19 +2,19 @@ package com.testautomation.pageobjects.interfaces;
 
 public interface DemoqaHomePageObjectsInterface extends PageObjectInterface {
 
-    void navigateToHomepage() throws Exception;
+    void navigateToHomepage();
 
-    void navigateToElements() throws Exception;
+    void navigateToElements();
 
-    void navigateToForms() throws Exception;
+    void navigateToForms();
 
-    void navigateToAlertsFrameWindows() throws Exception;
+    void navigateToAlertsFrameWindows();
 
-    void navigateToWidgets() throws Exception;
+    void navigateToWidgets();
 
-    void navigateToInteractions() throws Exception;
+    void navigateToInteractions();
 
-    void navigateToBookStoreApplication() throws Exception;
+    void navigateToBookStoreApplication();
 
-    void selectItem(int i) throws Exception;
+    void selectItem(int i);
 }

@@ -16,18 +16,18 @@ public class RadioButtonStepDef {
     }
 
     @And("I click Radio Button")
-    public void iClickRadioButton() throws Exception {
+    public void iClickRadioButton(){
         demoqaHomePageObjects.selectItem(3);
     }
 
     @And("I check a button")
-    public void iCheckAButton() throws Exception {
+    public void iCheckAButton(){
         demoqaElementsPageObjects.checkAButton(2);
 
     }
 
     @Then("I validate the checked button")
-    public void iValidateTheCheckedButton() throws Exception {
+    public void iValidateTheCheckedButton(){
         demoqaElementsPageObjects.checkRadioButtons();
     }
 }

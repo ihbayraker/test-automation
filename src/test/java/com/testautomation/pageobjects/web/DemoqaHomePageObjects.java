@@ -12,49 +12,49 @@ public class DemoqaHomePageObjects extends PageObject implements DemoqaHomePageO
     }
 
     @Override
-    public void navigateToHomepage() throws Exception {
+    public void navigateToHomepage() {
         browser.navigate().to(PropertiesUtils.getEnvironmentProperty("homepage"));
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("GoogleAdXpath"),browser);
     }
 
     @Override
-    public void navigateToElements() throws Exception {
+    public void navigateToElements() {
         navigateToHomepage();
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("homepageCardXpath")+"[1]",browser);
     }
 
     @Override
-    public void navigateToForms() throws Exception {
+    public void navigateToForms() {
         navigateToHomepage();
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("homepageCardXpath")+"[2]",browser);
     }
 
     @Override
-    public void navigateToAlertsFrameWindows() throws Exception {
+    public void navigateToAlertsFrameWindows() {
         navigateToHomepage();
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("homepageCardXpath")+"[3]",browser);
     }
 
     @Override
-    public void navigateToWidgets() throws Exception {
+    public void navigateToWidgets() {
         navigateToHomepage();
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("homepageCardXpath")+"[4]",browser);
     }
 
     @Override
-    public void navigateToInteractions() throws Exception {
+    public void navigateToInteractions() {
         navigateToHomepage();
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("homepageCardXpath")+"[5]",browser);
     }
 
     @Override
-    public void navigateToBookStoreApplication() throws Exception {
+    public void navigateToBookStoreApplication() {
         navigateToHomepage();
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("homepageCardXpath")+"[6]",browser);
     }
 
     @Override
-    public void selectItem(int i) throws Exception {
+    public void selectItem(int i) {
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("itemSelectionXpath")+"["+i+"]",browser);
     }
 }

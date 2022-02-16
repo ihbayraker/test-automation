@@ -17,33 +17,33 @@ public class TextBoxStepDef {
     }
 
     @Given("I navigate to elements page")
-    public void iNavigateToElementsPage() throws Exception {
+    public void iNavigateToElementsPage(){
         demoqaHomePageObjects.navigateToElements();
     }
 
     @And("I click Text box")
-    public void iClickTextBox() throws Exception {
+    public void iClickTextBox(){
         demoqaHomePageObjects.selectItem(1);
     }
 
     @Then("I fill Full Name with {string}")
-    public void iFillFullNameWith(String name) throws Exception {
+    public void iFillFullNameWith(String name){
         demoqaElementsPageObjects.typeName(name);
 
     }
 
     @And("I fill Email with {string}")
-    public void iFillEmailWith(String email) throws Exception {
+    public void iFillEmailWith(String email){
         demoqaElementsPageObjects.typeEmail(email);
     }
 
     @And("I fill Current Address with {string}")
-    public void iFillCurrentAddressWith(String address) throws Exception {
+    public void iFillCurrentAddressWith(String address){
         demoqaElementsPageObjects.typeCurrentAddress(address);
     }
 
     @And("I fill Permanent Address with {string}")
-    public void iFillPermanentAddressWith(String address) throws Exception {
+    public void iFillPermanentAddressWith(String address){
         demoqaElementsPageObjects.typePermanentAddress(address);
     }
 
@@ -53,7 +53,7 @@ public class TextBoxStepDef {
     }
 
     @Then("I validate that i filled the boxes correctly")
-    public void iValidateThatIFilledTheBoxesCorrectly() throws Exception {
+    public void iValidateThatIFilledTheBoxesCorrectly(){
         demoqaElementsPageObjects.checkOutput();
     }
 }
