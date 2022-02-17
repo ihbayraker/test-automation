@@ -4,11 +4,13 @@ import com.testautomation.pageobjects.web.DemoqaElementsPageObjects;
 import com.testautomation.pageobjects.web.DemoqaHomePageObjects;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class RadioButtonStepDef {
 
     private final DemoqaHomePageObjects demoqaHomePageObjects;
     private final DemoqaElementsPageObjects demoqaElementsPageObjects;
+    private String radioButton;
 
     public RadioButtonStepDef() throws Exception {
         demoqaHomePageObjects = new DemoqaHomePageObjects();
@@ -22,12 +24,12 @@ public class RadioButtonStepDef {
 
     @And("I check a button")
     public void iCheckAButton(){
-        demoqaElementsPageObjects.checkAButton(2);
+       radioButton = demoqaElementsPageObjects.checkAButton(2);
 
     }
 
     @Then("I validate the checked button")
     public void iValidateTheCheckedButton(){
-        demoqaElementsPageObjects.checkRadioButtons();
+        Assert.assertTrue(radioButton+" was supposed to be selected",demoqaElementsPageObjects.checkRadioButtons().contains(radioButton));
     }
 }

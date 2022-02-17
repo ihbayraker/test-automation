@@ -13,17 +13,17 @@ public interface DemoqaElementsPageObjectsInterface extends PageObjectInterface 
 
     void pressSubmit();
 
-    void checkOutput();
+    String checkOutput();
 
     void unwindNodes(int i);
 
-    void toggleNodes(int i);
+    String toggleNodes(int i);
 
-    void checkSelectedNodes();
+    String checkSelectedNodes();
 
-    void checkAButton(int i);
+    String checkAButton(int i);
 
-    void checkRadioButtons();
+    String checkRadioButtons();
 
     void clickAddRegistration();
 
@@ -49,7 +49,7 @@ public interface DemoqaElementsPageObjectsInterface extends PageObjectInterface 
 
     void updateEntry(int i);
 
-    void recordRow(String text);
+    void  recordRow(String text);
 
     void doDoubleClick();
 
@@ -57,7 +57,7 @@ public interface DemoqaElementsPageObjectsInterface extends PageObjectInterface 
 
     void doNormalClick();
 
-    void writeClickResults();
+    String writeClickResults();
 
     boolean clickApiCallLinkAndRecordStatus(String api) throws Exception;
 
@@ -67,5 +67,5 @@ public interface DemoqaElementsPageObjectsInterface extends PageObjectInterface 
 
     void uploadDownloadedFile(String fileName);
 
-    void checkFileUploadedAndErase(String fileName);
+    boolean checkFileUploadedAndErase(String fileName);
 }

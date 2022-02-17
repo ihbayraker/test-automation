@@ -4,11 +4,15 @@ import com.testautomation.pageobjects.web.DemoqaElementsPageObjects;
 import com.testautomation.pageobjects.web.DemoqaHomePageObjects;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
+
+import java.util.ArrayList;
 
 public class CheckBoxStepDef {
 
     private final DemoqaHomePageObjects demoqaHomePageObjects;
     private final DemoqaElementsPageObjects demoqaElementsPageObjects;
+    private ArrayList<String> nodes = new ArrayList<>();
 
     public CheckBoxStepDef() throws Exception {
         demoqaHomePageObjects = new DemoqaHomePageObjects();
@@ -32,13 +36,16 @@ public class CheckBoxStepDef {
 
     @Then("I toggle few nodes")
     public void iToggleFewNodes(){
-        demoqaElementsPageObjects.toggleNodes(6);
-        demoqaElementsPageObjects.toggleNodes(10);
+        nodes.add(demoqaElementsPageObjects.toggleNodes(7));
+        nodes.add(demoqaElementsPageObjects.toggleNodes(13));
+
     }
 
     @Then("I validate the checked nodes")
     public void iValidateTheCheckedNodes(){
-        demoqaElementsPageObjects.checkSelectedNodes();
+        String Output = demoqaElementsPageObjects.checkSelectedNodes();
+        Assert.assertTrue((nodes.get(0))+" was supposed to be toggled",Output.contains(nodes.get(0)));
+        Assert.assertTrue((nodes.get(1))+" was supposed to be toggled",Output.contains(nodes.get(1)));
     }
 
 }

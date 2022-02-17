@@ -4,6 +4,7 @@ import com.testautomation.pageobjects.web.DemoqaElementsPageObjects;
 import com.testautomation.pageobjects.web.DemoqaHomePageObjects;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class ButtonsStepDef {
 
@@ -37,6 +38,9 @@ public class ButtonsStepDef {
 
     @Then("I validate that I clicked all buttons")
     public void iValidateThatIClickedAllButtons(){
-        demoqaElementsPageObjects.writeClickResults();
+        String output = demoqaElementsPageObjects.writeClickResults();
+        Assert.assertTrue("Double click was a failure",output.contains("double click"));
+        Assert.assertTrue("right click was a failure",output.contains("right click"));
+        Assert.assertTrue("dynamic click was a failure",output.contains("dynamic click"));
     }
 }

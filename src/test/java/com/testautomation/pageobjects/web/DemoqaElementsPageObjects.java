@@ -40,10 +40,12 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
     }
 
     @Override
-    public void checkOutput(){
+    public String checkOutput(){
         Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("textBoxOutputXpath"),browser);
         String output = Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("textBoxOutputXpath"),browser);
         Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
+
+        return output;
     }
 
     @Override
@@ -52,27 +54,33 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
     }
 
     @Override
-    public void toggleNodes(int i){
+    public String toggleNodes(int i){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("checkBoxNodeXpath")+"["+i+"]",browser);
+        return Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("checkBoxNodeXpath")+"["+i+"]",browser).toLowerCase();
     }
 
     @Override
-    public void checkSelectedNodes(){
+    public String checkSelectedNodes(){
         Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("checkBoxResultXpath"),browser);
         String output = Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("checkBoxResultXpath"),browser);
         Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
+
+        return output;
     }
 
     @Override
-    public void checkAButton(int i){
+    public String checkAButton(int i){
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("radioButtonSelectionXpath")+"["+i+"]",browser);
+        return Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("radioButtonSelectionXpath")+"["+i+"]",browser);
     }
 
     @Override
-    public void checkRadioButtons(){
+    public String checkRadioButtons(){
         Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("radioButtonSuccessXpath"),browser);
         String output = Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("radioButtonSuccessXpath"),browser);
         Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
+
+        return output;
     }
 
     @Override
@@ -176,7 +184,7 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
     }
 
     @Override
-    public void writeClickResults() {
+    public String writeClickResults() {
         StringBuilder stringBuilder = new StringBuilder();
         int messageCount = Helper.getElementCount(PropertiesUtils.getEnvironmentProperty("buttonsClickMessageXpath"),browser);
         for(int i = 1; i<=messageCount; i++){
@@ -187,6 +195,8 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
         }
         String output = stringBuilder.toString();
         Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
+
+        return output;
     }
 
     @Override
@@ -266,10 +276,19 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
     }
 
     @Override
-    public void checkFileUploadedAndErase(String fileName) {
+    public boolean checkFileUploadedAndErase(String fileName) {
         File downloadedFile = new File(System.getProperty("user.dir") + File.separator + "target" + File.separator + fileName);
         Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("fileUploadedMessageXpath"),browser);
+
         downloadedFile.delete();
+        String output = Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("fileUploadedMessageXpath"),browser);
+        Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
+
+        if(output.contains(fileName)){
+            return true;
+        }else{
+            return false;
+        }
 
     }
 }

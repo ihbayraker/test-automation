@@ -17,5 +17,5 @@ Feature: Fill student registration form
     Then I press submit form
     And I validate the form is registered
     Examples:
-      | mame  | surname  | email                 | mobileNumber | day | month | year | subject          | Address   |
-      | Hakan | Bayraker | hbayraker@example.com | 5555555555   | 6   | 9     | 1996 | Computer Science | NCR Delhi |
+      | mame    | surname  | email                  | mobileNumber | day | month | year | subject          | Address |
+      | Richard | Roe      | RichardRoe@example.com | 5555555555   | 6   | 9     | 1996 | Computer Science | India   |

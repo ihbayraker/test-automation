@@ -38,6 +38,6 @@ public class DownloadAndUploadStepDef {
 
     @And("I validate that i uploaded the file")
     public void iValidateThatIUploadedTheFile(){
-        demoqaElementsPageObjects.checkFileUploadedAndErase("sampleFile.jpeg");
+        Assert.assertTrue("The upload was unsuccessful",demoqaElementsPageObjects.checkFileUploadedAndErase("sampleFile.jpeg"));
     }
 }

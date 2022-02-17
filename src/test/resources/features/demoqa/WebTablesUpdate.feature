@@ -18,4 +18,4 @@ Feature: Update an existing entry in Web Table
     Then I record the row that contains "<email>"
     Examples:
       | firstName | lastName | email               | age | salary | department |
-      | Jane      | Doe      | JaneDoe@example.com | 25  | 2000   | QA         |
+      | Jane      | Doe      | JaneDoe@example.com | 21  | 2000   | QA         |

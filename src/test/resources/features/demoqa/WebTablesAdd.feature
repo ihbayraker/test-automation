@@ -15,5 +15,5 @@ Feature: Add a new entry to Web Table
     And I validate that table contains "<firstName>" and "<lastName>"
     Then I record the row that contains "<email>"
     Examples:
-      | firstName | lastName | email               | age | salary | department |
-      | John      | Doe      | johnDoe@example.com | 25  | 2000   | QA         |
+      | firstName | lastName | email                  | age | salary | department |
+      | Johnny    | Doe      | johnnyDoe@example.com  | 25  | 2000   | QA         |
