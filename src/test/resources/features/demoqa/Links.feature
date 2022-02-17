@@ -1,4 +1,4 @@
-@all @web @demoqa
+@all @demoqa
 Feature: Click links to get api calls
 
   Scenario: Click links to get api calls

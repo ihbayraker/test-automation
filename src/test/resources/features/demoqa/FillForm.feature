@@ -1,4 +1,4 @@
-@all @web @demoqa
+@all @demoqa
 Feature: Fill student registration form
 
   Scenario Outline: Fill student registration form

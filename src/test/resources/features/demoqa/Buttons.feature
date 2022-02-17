@@ -1,4 +1,4 @@
-@all @web @demoqa
+@all @demoqa
 Feature: Click on all types of buttons
 
   Scenario: Click on all types of buttons

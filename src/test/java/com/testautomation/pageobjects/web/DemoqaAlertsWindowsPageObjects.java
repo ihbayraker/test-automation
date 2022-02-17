@@ -1,6 +1,7 @@
 package com.testautomation.pageobjects.web;
 
 import com.testautomation.pageobjects.interfaces.DemoqaAlertsWindowsPageObjectsInterface;
+import com.testautomation.stepdef.Hooks;
 import com.testautomation.utils.Helper;
 import com.testautomation.utils.PropertiesUtils;
 
@@ -40,4 +41,61 @@ public class DemoqaAlertsWindowsPageObjects extends PageObject implements Demoqa
             return false;
         }
     }
+
+    @Override
+    public boolean clickAndCheckAlert(int wait) throws Exception {
+        if(wait>0){
+            Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("AlertTimedButtonXpath"), browser);
+            wait=wait*1000;
+            Thread.sleep(wait);
+        }else {
+            Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("AlertTriggerButtonXpath"), browser);
+        }
+
+        boolean status = Helper.isAlertPresent(browser);
+        if(status){
+            Helper.acceptAlert(browser);
+        }
+        return status;
+    }
+
+    @Override
+    public boolean clickAndCancelAlert(){
+        Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("AlertConfirmBoxButtonXpath"), browser);
+        boolean status = Helper.isAlertPresent(browser);
+        if(status){
+            Helper.cancelAlert(browser);
+        }
+        return status;
+    }
+
+    @Override
+    public boolean clickAndTypeInAlert(String text) {
+        Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("AlertPromptBoxButtonXpath"), browser);
+        boolean status = Helper.isAlertPresent(browser);
+        if(status){
+            Helper.typeInAlert(text,browser);
+        }
+        return status;
+    }
+
+
+    @Override
+    public String validateConfirmBoxResult(){
+        Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("AlertConfirmBoxResultXpath"), browser);
+        String output =  Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("AlertConfirmBoxResultXpath"), browser);
+        Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
+
+        return output;
+    }
+
+    @Override
+    public String validatePromptBoxResult(){
+        Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("AlertPromptBoxResultXpath"), browser);
+        String output =  Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("AlertPromptBoxResultXpath"), browser);
+        Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
+
+        return output;
+    }
+
 }

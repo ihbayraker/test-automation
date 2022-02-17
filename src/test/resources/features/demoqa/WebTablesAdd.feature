@@ -1,4 +1,4 @@
-@all @web @demoqa
+@all @demoqa
 Feature: Add a new entry to Web Table
 
   Scenario Outline: Add a new entry to Web Table

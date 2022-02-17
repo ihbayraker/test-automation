@@ -1,4 +1,4 @@
-@all @web @demoqa
+@all @demoqa
 Feature: Download and upload files
 
   Scenario: Download and upload files

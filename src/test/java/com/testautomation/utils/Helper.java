@@ -106,6 +106,28 @@ public class Helper {
         }
         return windowHandles;
     }
+    public static boolean isAlertPresent(WebDriver driver) {
+        for (int i = 0; i < 10; i++) {
+            try{
+                driver.switchTo().alert();
+                return true;
+            }catch (NoAlertPresentException ignored){}
+        }
+        return false;
+    }
+
+    public static void acceptAlert(WebDriver driver){
+        driver.switchTo().alert().accept();
+    }
+
+    public static void cancelAlert(WebDriver driver){
+        driver.switchTo().alert().dismiss();
+    }
+
+    public static void typeInAlert(String text, WebDriver driver){
+        driver.switchTo().alert().sendKeys(text);
+        driver.switchTo().alert().accept();
+    }
 
     public static void SwitchTab(int tab, WebDriver driver) throws Exception {
         ArrayList<String> windowHandles = getWindowHandlers(driver);

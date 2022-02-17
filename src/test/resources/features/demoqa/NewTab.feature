@@ -1,4 +1,4 @@
-@all @web @demoqa
+@all @demoqa
 Feature: Open a new tab via button
 
   Scenario: Open a new tab via button

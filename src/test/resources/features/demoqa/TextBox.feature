@@ -1,4 +1,4 @@
-@all @web @demoqa
+@all @demoqa
 Feature: Fill the Text Boxes and Submit
 
   Scenario Outline: Fill the Text Boxes and Submit
