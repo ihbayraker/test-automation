@@ -11,6 +11,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Set;
 
 public class Helper {
 
@@ -90,5 +92,27 @@ public class Helper {
     public static void generateDummyImage(int width, int height, String name) throws Exception {
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
         ImageIO.write(image, "jpg", new FileOutputStream(System.getProperty("user.dir") + File.separator + "target" + File.separator + name+".jpg"));
+    }
+
+    public static ArrayList<String> getWindowHandlers(WebDriver driver) throws Exception {
+        ArrayList<String> windowHandles = null;
+        for (int i = 0; i < 10; i++) {
+            if (driver.getWindowHandles().size() > 1) {
+                windowHandles = new ArrayList<String>(driver.getWindowHandles());
+                break;
+            } else {
+                Thread.sleep(100);
+            }
+        }
+        return windowHandles;
+    }
+
+    public static void SwitchTab(int tab, WebDriver driver) throws Exception {
+        ArrayList<String> windowHandles = getWindowHandlers(driver);
+        driver.switchTo().window(windowHandles.get(tab));
+    }
+
+    public static String getUrl(WebDriver driver){
+        return driver.getCurrentUrl();
     }
 }

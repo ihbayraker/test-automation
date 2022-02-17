@@ -17,7 +17,7 @@ public class LinksStepDef {
     }
 
     @And("I click Links")
-    public void iClickLinks() throws Exception {
+    public void iClickLinks() {
         demoqaHomePageObjects.selectItem(6);
     }
 
