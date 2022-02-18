@@ -1,0 +1,54 @@
+name: Run Tests on all Browsers
+
+on:
+  workflow_dispatch:
+     
+jobs:
+  test:
+    name: Running all tests
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 17
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+        
+    - name: Run tests with Chrome
+      run: mvn clean test -Dcucumber.reporting.skip=true -Dbrowser=chrome
+    - name: Upload results to Calliope
+      run: curl -X POST
+        -H "x-api-key:${{ secrets.API_KEY }}"
+        -H "multipart/form-data"
+        -F "file[]=@target/cucumber.json"
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=chrome
+        
+    - name: Run tests with Firefox
+      run: mvn clean test -Dcucumber.reporting.skip=true -Dbrowser=firefox
+    - name: Upload results to Calliope
+      run: curl -X POST
+        -H "x-api-key:${{ secrets.API_KEY }}"
+        -H "multipart/form-data"
+        -F "file[]=@target/cucumber.json"
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=firefox
+        
+    - name: Run tests with Opera
+      run: mvn clean test -Dcucumber.reporting.skip=true -Dbrowser=opera
+    - name: Upload results to Calliope
+      run: curl -X POST
+        -H "x-api-key:${{ secrets.API_KEY }}"
+        -H "multipart/form-data"
+        -F "file[]=@target/cucumber.json"
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=opera
+        
+    - name: Run tests with Edge
+      run: mvn clean test -Dcucumber.reporting.skip=true -Dbrowser=edge
+    - name: Upload results to Calliope
+      run: curl -X POST
+        -H "x-api-key:${{ secrets.API_KEY }}"
+        -H "multipart/form-data"
+        -F "file[]=@target/cucumber.json"
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=edge
