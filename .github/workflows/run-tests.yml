@@ -18,7 +18,8 @@ jobs:
         cache: maven
         
     - name: Run tests with Chrome
-      run: mvn clean test -Dcucumber.reporting.skip="true" -Dbrowser="chrome"
+      run: mvn clean  test -Dcucumber.reporting.skip="true" -Dbrowser="chrome"
+      shell: cmd
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
@@ -28,6 +29,7 @@ jobs:
         
     - name: Run tests with Firefox
       run: mvn clean test -Dcucumber.reporting.skip="true" -Dbrowser="firefox"
+      shell: cmd
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
@@ -37,6 +39,7 @@ jobs:
         
     - name: Run tests with Opera
       run: mvn clean test -Dcucumber.reporting.skip="true" -Dbrowser="opera"
+      shell: cmd
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
@@ -46,6 +49,7 @@ jobs:
         
     - name: Run tests with Edge
       run: mvn clean test -Dcucumber.reporting.skip="true" -Dbrowser="edge"
+      shell: cmd
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
