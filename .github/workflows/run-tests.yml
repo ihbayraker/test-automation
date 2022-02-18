@@ -18,7 +18,7 @@ jobs:
         cache: maven
         
     - name: Run tests with Chrome
-      run: mvn clean test "-Dcucumber.reporting.skip"=true -Dbrowser=chrome
+      run: mvn clean test "-Dcucumber.reporting.skip"="true" "-Dbrowser"="chrome"
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
@@ -27,7 +27,7 @@ jobs:
         "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=chrome
         
     - name: Run tests with Firefox
-      run: mvn clean test "-Dcucumber.reporting.skip"=true -Dbrowser=firefox
+      run: mvn clean test "-Dcucumber.reporting.skip"="true" "-Dbrowser"="firefox"
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
@@ -36,7 +36,7 @@ jobs:
         "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=firefox
         
     - name: Run tests with Opera
-      run: mvn clean test "-Dcucumber.reporting.skip"=true -Dbrowser=opera
+      run: mvn clean test "-Dcucumber.reporting.skip"="true" "-Dbrowser"="opera"
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
@@ -45,7 +45,7 @@ jobs:
         "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=opera
         
     - name: Run tests with Edge
-      run: mvn clean test "-Dcucumber.reporting.skip"=true -Dbrowser=edge
+      run: mvn clean test "-Dcucumber.reporting.skip"="true" "-Dbrowser"="edge"
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
