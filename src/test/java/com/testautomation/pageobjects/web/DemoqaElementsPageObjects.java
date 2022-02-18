@@ -241,7 +241,7 @@ public class DemoqaElementsPageObjects extends PageObject implements DemoqaEleme
         }
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty(key),browser);
 
-        for(int i=0; i<10; i++){
+        for(int i=0; i<20; i++){
             response = Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("LinksResponseXpath"),browser);
             if(response.contains(String.valueOf(status))){
                 Helper.scenarioWrite(Hooks.getScenario(),response,"Output");
