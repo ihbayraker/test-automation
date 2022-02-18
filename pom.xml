@@ -23,6 +23,8 @@
         <surefire.version>3.0.0-M5</surefire.version>
         <properties.version>1.0.0</properties.version>
         <report.version>5.6.2</report.version>
+        <lombok.version>1.18.22</lombok.version>
+        <json.version>20211205</json.version>
 
         <cucumber.reporting.skip>false</cucumber.reporting.skip>
         <exec.mainClass>com.testautomation.Main</exec.mainClass>
@@ -73,6 +75,16 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>

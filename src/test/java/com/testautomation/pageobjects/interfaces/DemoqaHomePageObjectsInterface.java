@@ -10,10 +10,6 @@ public interface DemoqaHomePageObjectsInterface extends PageObjectInterface {
 
     void navigateToAlertsFrameWindows();
 
-    void navigateToWidgets();
-
-    void navigateToInteractions();
-
     void navigateToBookStoreApplication();
 
     void selectItem(int i);

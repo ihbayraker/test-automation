@@ -1,5 +1,7 @@
-@all @demoqa
+@all @demoqa @elements
 Feature: Fill the Text Boxes and Submit
+
+  Fills the text boxes in text box page with given example then submits
 
   Scenario Outline: Fill the Text Boxes and Submit
     Given I navigate to elements page

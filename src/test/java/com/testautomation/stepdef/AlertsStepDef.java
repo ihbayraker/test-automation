@@ -33,7 +33,7 @@ public class AlertsStepDef {
     }
 
     @Then("I click on confirm box button and select an option")
-    public void iClickOnConfirmBoxButtonAndSelectAnOption() {
+    public void iClickOnConfirmBoxButtonAndSelectAnOption() throws Exception {
         Assert.assertTrue("Couldn't detect the alert",demoqaAlertsWindowsPageObjects.clickAndCancelAlert());
     }
 
@@ -43,7 +43,7 @@ public class AlertsStepDef {
     }
 
     @Then("I click prompt box button and type {string}")
-    public void iClickPromptBoxButtonAndType(String name){
+    public void iClickPromptBoxButtonAndType(String name) throws Exception {
         this.name = name;
         Assert.assertTrue("Couldn't detect the alert",demoqaAlertsWindowsPageObjects.clickAndTypeInAlert(name));
     }

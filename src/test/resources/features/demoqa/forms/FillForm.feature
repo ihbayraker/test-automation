@@ -1,5 +1,7 @@
-@all @demoqa
+@all @demoqa @forms
 Feature: Fill student registration form
+
+  Fills the registration form in forms page with given example
 
   Scenario Outline: Fill student registration form
     Given I navigate to forms page

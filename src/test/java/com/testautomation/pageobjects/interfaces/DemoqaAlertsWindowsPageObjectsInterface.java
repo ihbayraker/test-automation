@@ -14,9 +14,9 @@ public interface DemoqaAlertsWindowsPageObjectsInterface extends PageObjectInter
 
     boolean clickAndCheckAlert(int wait) throws Exception;
 
-    boolean clickAndCancelAlert();
+    boolean clickAndCancelAlert() throws Exception;
 
-    boolean clickAndTypeInAlert(String text);
+    boolean clickAndTypeInAlert(String text) throws Exception;
 
     String validateConfirmBoxResult();
 

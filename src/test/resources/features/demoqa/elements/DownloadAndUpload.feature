@@ -1,5 +1,8 @@
-@all @demoqa
+@all @demoqa @elements
 Feature: Download and upload files
+
+  Downloads the file in download and upload page
+  Uploads the downloaded file back
 
   Scenario: Download and upload files
     Given I navigate to elements page

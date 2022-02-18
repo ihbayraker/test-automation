@@ -1,5 +1,7 @@
-@all @demoqa
+@all @demoqa @alertswindows
 Feature: Open a new message page via button
+
+  Checks the new message button in browser windows page
 
   Scenario: Open a new message page via button
     Given I navigate Alerts, Frame and Windows page

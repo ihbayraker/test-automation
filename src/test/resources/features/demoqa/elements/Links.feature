@@ -1,5 +1,7 @@
-@all @demoqa
+@all @demoqa @elements
 Feature: Click links to get api calls
+
+  Checks all links found in links page
 
   Scenario: Click links to get api calls
     Given I navigate to elements page

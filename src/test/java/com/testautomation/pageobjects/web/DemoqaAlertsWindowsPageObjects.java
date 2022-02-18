@@ -45,11 +45,11 @@ public class DemoqaAlertsWindowsPageObjects extends PageObject implements Demoqa
     @Override
     public boolean clickAndCheckAlert(int wait) throws Exception {
         if(wait>0){
-            Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("AlertTimedButtonXpath"), browser);
+            Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("alertTimedButtonXpath"), browser);
             wait=wait*1000;
             Thread.sleep(wait);
         }else {
-            Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("AlertTriggerButtonXpath"), browser);
+            Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("alertTriggerButtonXpath"), browser);
         }
 
         boolean status = Helper.isAlertPresent(browser);
@@ -60,8 +60,8 @@ public class DemoqaAlertsWindowsPageObjects extends PageObject implements Demoqa
     }
 
     @Override
-    public boolean clickAndCancelAlert(){
-        Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("AlertConfirmBoxButtonXpath"), browser);
+    public boolean clickAndCancelAlert() throws Exception {
+        Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("alertConfirmBoxButtonXpath"), browser);
         boolean status = Helper.isAlertPresent(browser);
         if(status){
             Helper.cancelAlert(browser);
@@ -70,8 +70,8 @@ public class DemoqaAlertsWindowsPageObjects extends PageObject implements Demoqa
     }
 
     @Override
-    public boolean clickAndTypeInAlert(String text) {
-        Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("AlertPromptBoxButtonXpath"), browser);
+    public boolean clickAndTypeInAlert(String text) throws Exception {
+        Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("alertPromptBoxButtonXpath"), browser);
         boolean status = Helper.isAlertPresent(browser);
         if(status){
             Helper.typeInAlert(text,browser);
@@ -82,8 +82,8 @@ public class DemoqaAlertsWindowsPageObjects extends PageObject implements Demoqa
 
     @Override
     public String validateConfirmBoxResult(){
-        Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("AlertConfirmBoxResultXpath"), browser);
-        String output =  Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("AlertConfirmBoxResultXpath"), browser);
+        Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("alertConfirmBoxResultXpath"), browser);
+        String output =  Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("alertConfirmBoxResultXpath"), browser);
         Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
 
         return output;
@@ -91,8 +91,8 @@ public class DemoqaAlertsWindowsPageObjects extends PageObject implements Demoqa
 
     @Override
     public String validatePromptBoxResult(){
-        Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("AlertPromptBoxResultXpath"), browser);
-        String output =  Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("AlertPromptBoxResultXpath"), browser);
+        Helper.WaitForElementPresentByXpath(PropertiesUtils.getEnvironmentProperty("alertPromptBoxResultXpath"), browser);
+        String output =  Helper.getTextByXpath(PropertiesUtils.getEnvironmentProperty("alertPromptBoxResultXpath"), browser);
         Helper.scenarioWrite(Hooks.getScenario(),output,"Output");
 
         return output;

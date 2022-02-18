@@ -1,5 +1,7 @@
-@all @demoqa
+@all @demoqa @alertswindows
 Feature: Open a new tab via button
+
+  Checks the new tab button in browser windows page
 
   Scenario: Open a new tab via button
     Given I navigate Alerts, Frame and Windows page

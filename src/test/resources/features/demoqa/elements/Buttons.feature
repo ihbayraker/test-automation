@@ -1,5 +1,7 @@
-@all @demoqa
+@all @demoqa @elements
 Feature: Click on all types of buttons
+
+  Checks all buttons in buttons page
 
   Scenario: Click on all types of buttons
     Given I navigate to elements page

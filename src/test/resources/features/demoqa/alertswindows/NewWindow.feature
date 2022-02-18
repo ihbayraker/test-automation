@@ -1,5 +1,7 @@
-@all @demoqa
+@all @demoqa @alertswindows
 Feature: Open a new window via button
+
+  Checks the new window button in browser windows page
 
   Scenario: Open a new window via button
     Given I navigate Alerts, Frame and Windows page

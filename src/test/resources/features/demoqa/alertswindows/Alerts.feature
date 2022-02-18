@@ -1,5 +1,7 @@
-@all @demoqa
+@all @demoqa @alertswindows
 Feature: Check alert buttons
+
+  Checks all alert buttons in found in alert page
 
   Scenario Outline: Check alert buttons
     Given I navigate Alerts, Frame and Windows page

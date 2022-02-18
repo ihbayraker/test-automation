@@ -1,11 +1,12 @@
-@all @demoqa
-Feature: Update an existing entry in Web Table
+@all @demoqa @elements
+Feature: Add a new entry to Web Table
 
-  Scenario Outline: Update an existing entry in Web Table
+  Adds a new entry to the table in table page with the values given in the example
+
+  Scenario Outline: Add a new entry to Web Table
     Given I navigate to elements page
     And I click Web Table
-    Then I record an entry
-    Then I press update for recorded entry
+    Then I press add new registration
     And I fill First Name with "<firstName>"
     And I fill Last Name with "<lastName>"
     And I fill userEmail with "<email>"
@@ -13,9 +14,8 @@ Feature: Update an existing entry in Web Table
     And I fill Salary with "<salary>"
     And I fill Department with "<department>"
     Then I press submit the registration form
-    Then I check that the entry is deleted
     And I validate that table contains "<firstName>" and "<lastName>"
     Then I record the row that contains "<email>"
     Examples:
-      | firstName | lastName | email               | age | salary | department |
-      | Jane      | Doe      | JaneDoe@example.com | 21  | 2000   | QA         |
+      | firstName | lastName | email                  | age | salary | department |
+      | Johnny    | Doe      | johnnyDoe@example.com  | 25  | 2000   | QA         |

@@ -36,18 +36,6 @@ public class DemoqaHomePageObjects extends PageObject implements DemoqaHomePageO
     }
 
     @Override
-    public void navigateToWidgets() {
-        navigateToHomepage();
-        Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("homepageCardXpath")+"[4]",browser);
-    }
-
-    @Override
-    public void navigateToInteractions() {
-        navigateToHomepage();
-        Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("homepageCardXpath")+"[5]",browser);
-    }
-
-    @Override
     public void navigateToBookStoreApplication() {
         navigateToHomepage();
         Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("homepageCardXpath")+"[6]",browser);

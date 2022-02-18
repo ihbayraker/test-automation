@@ -12,7 +12,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Set;
 
 public class Helper {
 
@@ -81,6 +80,10 @@ public class Helper {
 
     }
 
+    public static String getUrl(WebDriver driver){
+        return driver.getCurrentUrl();
+    }
+
     public static String getTextByXpath(String xpath, WebDriver driver){
         return findElementByXpath(xpath, driver).getText();
     }
@@ -106,14 +109,21 @@ public class Helper {
         }
         return windowHandles;
     }
-    public static boolean isAlertPresent(WebDriver driver) {
+    public static boolean isAlertPresent(WebDriver driver) throws Exception {
         for (int i = 0; i < 10; i++) {
             try{
                 driver.switchTo().alert();
                 return true;
-            }catch (NoAlertPresentException ignored){}
+            }catch (NoAlertPresentException ignored){
+                Thread.sleep(100);
+            }
         }
         return false;
+    }
+
+    public static void checkAlertThenAccept(WebDriver driver) throws Exception {
+        isAlertPresent(driver);
+        acceptAlert(driver);
     }
 
     public static void acceptAlert(WebDriver driver){
@@ -132,9 +142,5 @@ public class Helper {
     public static void SwitchTab(int tab, WebDriver driver) throws Exception {
         ArrayList<String> windowHandles = getWindowHandlers(driver);
         driver.switchTo().window(windowHandles.get(tab));
-    }
-
-    public static String getUrl(WebDriver driver){
-        return driver.getCurrentUrl();
     }
 }

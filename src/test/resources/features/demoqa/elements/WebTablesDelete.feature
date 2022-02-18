@@ -1,5 +1,7 @@
-@all @demoqa
+@all @demoqa @elements
 Feature: Delete an entry from the Web table
+
+  Deletes one of the rows in the table in table page
 
   Scenario: Delete an entry from the Web table
     Given I navigate to elements page
