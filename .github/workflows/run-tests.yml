@@ -18,31 +18,31 @@ jobs:
         cache: maven
         
     - name: Run tests with Chrome
-      run: mvn clean  test -Dcucumber.reporting.skip="true" -Dbrowser="chrome"
+      run: mvn clean  test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="chrome"
       shell: cmd
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
         -H "multipart/form-data"
         -F "file[]=@target/cucumber.json"
-        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=chrome"
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=chrome&tag[]=demoqa"
         
     - name: Run tests with Firefox
-      run: mvn clean test -Dcucumber.reporting.skip="true" -Dbrowser="firefox"
+      run: mvn clean test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="firefox"
       shell: cmd
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
         -H "multipart/form-data"
         -F "file[]=@target/cucumber.json"
-        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=firefox"
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=firefox&tag[]=demoqa"
         
     - name: Run tests with Edge
-      run: mvn clean test -Dcucumber.reporting.skip="true" -Dbrowser="edge"
+      run: mvn clean test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="edge"
       shell: cmd
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
         -H "multipart/form-data"
         -F "file[]=@target/cucumber.json"
-        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=edge"
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=edge&tag[]=demoqa"
