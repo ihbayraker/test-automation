@@ -6,6 +6,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import com.testautomation.utils.PropertiesUtils;
 
 import java.io.File;
+import java.nio.file.FileSystems;
 
 
 public abstract class DriverManager {
@@ -13,7 +14,7 @@ public abstract class DriverManager {
     protected WebDriver driver;
     protected DesiredCapabilities caps = new DesiredCapabilities();
     protected boolean isHeadless;
-    protected String downloadFilepath = System.getProperty("user.dir") + File.separator + "target";
+    protected String downloadFilepath = FileSystems.getDefault().getPath("").toAbsolutePath() + File.separator + "target";
 
     public abstract void createWebDriver() throws Exception;
 
