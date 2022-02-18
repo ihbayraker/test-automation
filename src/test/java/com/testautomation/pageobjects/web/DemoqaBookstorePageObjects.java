@@ -26,7 +26,12 @@ public class DemoqaBookstorePageObjects extends PageObject implements DemoqaBook
         HttpResponse<String> response = ApiUtils.postRequest("https://demoqa.com/Account/v1/User",post.toString());
         Helper.scenarioWrite(Hooks.getScenario(),response.body(),"Output");
 
-        return response.statusCode() == 201;
+
+        if(response.statusCode() == 201){
+            return true;
+        }else {
+            return response.body().contains("1204");
+        }
     }
 
     @Override
