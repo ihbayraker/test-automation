@@ -1,5 +1,5 @@
 @all @demoqa @bookstore
-Feature: Add books then delete all
+Feature: Bookstore-Add books then delete all
 
   Creates a new account then logins to bookstore
   Adds three books to the table

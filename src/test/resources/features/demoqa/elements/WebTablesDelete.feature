@@ -1,5 +1,5 @@
 @all @demoqa @elements
-Feature: Delete an entry from the Web table
+Feature: Elements-Delete an entry from the Web table
 
   Deletes one of the rows in the table in table page
 

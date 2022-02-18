@@ -1,5 +1,5 @@
 @all @demoqa @alertswindows
-Feature: Check alert buttons
+Feature: AlertsWindows-Check alert buttons
 
   Checks all alert buttons in found in alert page
 

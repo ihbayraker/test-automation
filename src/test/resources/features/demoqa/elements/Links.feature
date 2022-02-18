@@ -1,5 +1,5 @@
 @all @demoqa @elements
-Feature: Click links to get api calls
+Feature: Elements-Click links to get api calls
 
   Checks all links found in links page
 

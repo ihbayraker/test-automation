@@ -1,9 +1,9 @@
 @all @demoqa @bookstore
-Feature: Login fail on bookstore
+Feature: Bookstore-Check login fail
 
   Tries to login to bookstore with false credentials
 
-  Scenario Outline: Login fail on bookstore
+  Scenario Outline: Check login fail
     Given I navigate to Bookstore page
     And I click Login
     Then I Type "<username>" to username and "<password>" to password and login

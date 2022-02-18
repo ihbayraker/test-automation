@@ -1,5 +1,5 @@
 @all @demoqa @bookstore
-Feature: Add books then logout
+Feature: Bookstore-Add books then logout
 
   Creates a new account then logins to bookstore
   Adds a single book to the table

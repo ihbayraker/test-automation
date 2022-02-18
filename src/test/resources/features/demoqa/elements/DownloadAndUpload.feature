@@ -1,5 +1,5 @@
 @all @demoqa @elements
-Feature: Download and upload files
+Feature: Elements-Download then upload files
 
   Downloads the file in download and upload page
   Uploads the downloaded file back

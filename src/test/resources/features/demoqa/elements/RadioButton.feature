@@ -1,5 +1,5 @@
 @all @demoqa @elements
-Feature: Check Radio Buttons
+Feature: Elements-Check Radio Buttons
 
   Checks all radio buttons in radio button page
 

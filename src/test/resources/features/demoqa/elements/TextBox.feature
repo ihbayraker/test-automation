@@ -1,9 +1,9 @@
 @all @demoqa @elements
-Feature: Fill the Text Boxes and Submit
+Feature: Elements-Fill the Text Boxes then Submit
 
   Fills the text boxes in text box page with given example then submits
 
-  Scenario Outline: Fill the Text Boxes and Submit
+  Scenario Outline: Fill the Text Boxes then Submit
     Given I navigate to elements page
     And I click Text box
     Then I fill Full Name with "<name>"

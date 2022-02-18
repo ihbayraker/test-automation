@@ -1,5 +1,5 @@
 @all @demoqa @elements
-Feature: Update an existing entry in Web Table
+Feature: Elements-Update an existing entry in Web Table
 
   Updates one of the default rows in table in table page with given example
 

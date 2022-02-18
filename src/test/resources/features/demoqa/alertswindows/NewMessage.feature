@@ -1,5 +1,5 @@
 @all @demoqa @alertswindows
-Feature: Open a new message page via button
+Feature: AlertsWindows-Open a new message page via button
 
   Checks the new message button in browser windows page
 

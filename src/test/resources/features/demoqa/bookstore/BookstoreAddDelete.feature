@@ -1,12 +1,12 @@
 @all @demoqa @bookstore
-Feature: Add books and delete
+Feature: Bookstore-Add books then delete
 
   Creates a new account then logins to bookstore
   Adds two books to the table
   Deletes one of the books
   After everything is verified deletes the created account
 
-  Scenario Outline: Add books and delete
+  Scenario Outline: Add books then delete
     Given I navigate to Bookstore page
     And I click Login
     Then I create a new bookstore account with "<username>" and "<password>"

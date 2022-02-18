@@ -1,5 +1,5 @@
 @all @demoqa @forms
-Feature: Fill student registration form
+Feature: Forms-Fill student registration form
 
   Fills the registration form in forms page with given example
 

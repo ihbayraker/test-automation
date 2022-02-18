@@ -1,5 +1,5 @@
 @all @demoqa @elements
-Feature: Toggle Check Boxes
+Feature: Elements-Toggle Check Boxes
 
   Unwinds the nodes in checkbox page then toggles some
 

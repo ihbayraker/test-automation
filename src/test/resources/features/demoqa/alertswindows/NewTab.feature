@@ -1,5 +1,5 @@
 @all @demoqa @alertswindows
-Feature: Open a new tab via button
+Feature: AlertsWindows-Open a new tab via button
 
   Checks the new tab button in browser windows page
 
