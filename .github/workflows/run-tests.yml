@@ -1,4 +1,4 @@
-name: Run Tests on all Browsers
+name: Test
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
         cache: maven
         
     - name: Run tests with Chrome
-      run: mvn clean  test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="chrome"
+      run: mvn clean  test -Reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="chrome"
       shell: cmd
     - name: Upload results to Calliope
       run: curl -X POST
@@ -28,7 +28,7 @@ jobs:
         "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=chrome&tag[]=demoqa"
         
     - name: Run tests with Firefox
-      run: mvn clean test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="firefox"
+      run: mvn clean test -Reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="firefox"
       shell: cmd
     - name: Upload results to Calliope
       run: curl -X POST
@@ -38,7 +38,7 @@ jobs:
         "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=firefox&tag[]=demoqa"
         
     - name: Run tests with Edge
-      run: mvn clean test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="edge"
+      run: mvn clean test -Reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="edge"
       shell: cmd
     - name: Upload results to Calliope
       run: curl -X POST
