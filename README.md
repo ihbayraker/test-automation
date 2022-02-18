@@ -1,35 +1,29 @@
 # Getting Started
-- This project is a Selenium BDD Framework that can be used to automate web browsers.
-- It's configured to run a simple showcase out of the box.
-- To execute in the default configuration run following in the command.
+
+![workflow](https://github.com/ihbayraker/test-automation/actions/workflows/run-tests.yml/badge.svg)
+
+- This project uses Selenium with BDD Framework to automate web and api testing
+- It's configured to run several web and api tests out of the box.
+- The web test are run on [ToolQA](https://demoqa.com) while api tests use [Petstore](https://petstore.swagger.io/).
+- To execute the tests in default configuration locally run the command below through command console.
 ```sh
-mvn clean test exec:java
+$ mvn clean test exec:java
 ```
 - After the execution the report of the results should be fired up automatically, but they can be also found in **target/cucumber-html-report** folder.
 # Configuration
-- There are several configurable files in the project to further customize the test environment and scope.
-- The default **testframework.properties** file is shown below.
+- Several parameters can be altered via maven commands.
+- By default, the tests will be run on **Chrome** browser **headless** and a report wil be generated however all these can be altered with commands shown below.
+
+| Command | Parameters | Description |
+| ------ | ------ | ------ |
+| mvn clean test | N/A | Mandatory, runs the tests. |
+| exec:java | N/A | Optional, Fires up the reports automatically, should  only used in a local environment. |
+| -Dcucumber.filter.tags=@tag | @all, @demoqa, @elements, @forms, @bookstore, @alertswindows  | Optional, specify the feature tags to manipulate test scope, By default **@all** is run.  |
+| -Dcucumber.reporting.skip=false | true,false | Optional, determines if the report generation step at the end is skipped or not, by default its **false**. |
+| -Dbrowser=chrome | chrome, firefox, opera, edge | Optional, determines the browser the test will be run, by default its **chrome**. |
+| -Dheadless=true | true, false | Optional, determines if the browser will be run headless or not, by default its **true**. |
+
+- Based on the information given above if we wanted to execute bookstore tests in a CI/CD pipeline using the firefox browser we should use a command like this.
 ```sh
-browser=chrome
-headless=true
-environment=automationpractice
-```
-- **browser** determines the webdriver that's going to be used currently chrome, firefox, opera and edge is supported.
-- **headless** is a boolean value, will determine if the webdriver going to be used headless or not.
-- The runner class is **TestRunner.java** which is shown below.
-```sh
-plugin = {"json:target/cucumber.json"},
-features = {"src/test/resources/features"},
-glue = {"com.testautomation.stepdef"},
-tags = "@demo"
-```
-- By default, all scenarios with the tag @demo will be run however this can be altered by changing the **Dcucumber.filter.tags** property.
-- If we wanted to exclude scenarios with the tag @pass2 we could use the following command.
-```sh
-mvn clean test exec:java "-Dcucumber.filter.tags=@demo and not @pass2"
-```
-- The report generation can be disabled by setting the **cucumber.reporting.skip** property as false.
-- The command shown below will not prevent the generation of cucumber.json.
-```sh
-mvn clean test exec:java -Dcucumber.reporting.skip=true
+$ mvn clean test -Dcucumber.reporting.skip=false -Dcucumber.filter.tags=@bookstore -Dbrowser=firefox
 ```
