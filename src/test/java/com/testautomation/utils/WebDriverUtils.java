@@ -6,6 +6,7 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -36,7 +37,11 @@ public class WebDriverUtils {
 
     public static void quitWebDriver(){
         if (null != browser){
-            browser.quit();
+            try{
+                browser.quit();
+            }catch (WebDriverException ignored){
+                browser.quit();
+            }
             browser = null;
         }
     }
