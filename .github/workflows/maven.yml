@@ -1,9 +1,7 @@
 name: Java CI with Maven
 
 on:
-  push:
-    branches:
-     - main
+  workflow_dispatch:
      
 jobs:
   test:
@@ -18,11 +16,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Run tests on Windows
-      run: mvn clean test
+    - name: Run tests on Windows with Chrome
+      run: mvn clean test -Dcucumber.reporting.skip=true
     - name: Upload results to Calliope
       run: curl -X POST
         -H "x-api-key:${{ secrets.API_KEY }}"
         -H "multipart/form-data"
         -F "file[]=@target/cucumber.json"
-        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?os=myos&platform=myplatform&build=mybuild"
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=chrome
