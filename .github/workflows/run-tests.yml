@@ -25,7 +25,7 @@ jobs:
         -H "x-api-key:${{ secrets.API_KEY }}"
         -H "multipart/form-data"
         -F "file[]=@target/cucumber.json"
-        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=chrome
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=chrome"
         
     - name: Run tests with Firefox
       run: mvn clean test -Dcucumber.reporting.skip="true" -Dbrowser="firefox"
@@ -35,7 +35,7 @@ jobs:
         -H "x-api-key:${{ secrets.API_KEY }}"
         -H "multipart/form-data"
         -F "file[]=@target/cucumber.json"
-        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=firefox
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=firefox"
         
     - name: Run tests with Opera
       run: mvn clean test -Dcucumber.reporting.skip="true" -Dbrowser="opera"
@@ -45,7 +45,7 @@ jobs:
         -H "x-api-key:${{ secrets.API_KEY }}"
         -H "multipart/form-data"
         -F "file[]=@target/cucumber.json"
-        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=opera
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=opera"
         
     - name: Run tests with Edge
       run: mvn clean test -Dcucumber.reporting.skip="true" -Dbrowser="edge"
@@ -55,4 +55,4 @@ jobs:
         -H "x-api-key:${{ secrets.API_KEY }}"
         -H "multipart/form-data"
         -F "file[]=@target/cucumber.json"
-        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=edge
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=edge"
