@@ -26,7 +26,7 @@
         <lombok.version>1.18.22</lombok.version>
         <json.version>20211205</json.version>
 
-        <Reporting.skip>false</Reporting.skip>
+        <cucumber.reporting.skip>false</cucumber.reporting.skip>
         <exec.mainClass>com.testautomation.Main</exec.mainClass>
 
         <browser>chrome</browser>
@@ -154,7 +154,7 @@
                         <outputDirectory>${project.build.directory}</outputDirectory>
                         <inputDirectory>${project.build.directory}</inputDirectory>
                         <checkBuildResult>false</checkBuildResult>
-                        <skip>${Reporting.skip}</skip>
+                        <skip>${cucumber.reporting.skip}</skip>
                         <jsonFiles>
                             <param>**/cucumber*.json</param>
                         </jsonFiles>
