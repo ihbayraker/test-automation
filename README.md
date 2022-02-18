@@ -18,10 +18,10 @@ $ mvn clean test exec:java
 | ------ | ------ | ------ |
 | mvn clean test | N/A | Mandatory, runs the tests. |
 | exec:java | N/A | Optional, Fires up the reports automatically, should  only used in a local environment. |
-| -Dcucumber.filter.tags=@tag | @all, @demoqa, @elements, @forms, @bookstore, @alertswindows  | Optional, specify the feature tags to manipulate test scope, By default **@all** is run.  |
-| -Dcucumber.reporting.skip=false | true,false | Optional, determines if the report generation step at the end is skipped or not, by default its **false**. |
-| -Dbrowser=chrome | chrome, firefox, opera, edge | Optional, determines the browser the test will be run, by default its **chrome**. |
-| -Dheadless=true | true, false | Optional, determines if the browser will be run headless or not, by default its **true**. |
+| -Dcucumber.filter.tags | @all, @demoqa, @elements, @forms, @bookstore, @alertswindows  | Optional, specify the feature tags to manipulate test scope, By default **@all** is run.  |
+| -Dcucumber.reporting.skip | true,false | Optional, determines if the report generation step at the end is skipped or not, by default its **false**. |
+| -Dbrowser | chrome, firefox, opera, edge | Optional, determines the browser the test will be run, by default its **chrome**. |
+| -Dheadless | true, false | Optional, determines if the browser will be run headless or not, by default its **true**. |
 
 - Based on the information given above if we wanted to execute bookstore tests in a CI/CD pipeline using the firefox browser we should use a command like this.
 ```sh
