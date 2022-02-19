@@ -11,5 +11,5 @@ Feature: User-Create user for the petstore then update credentials
     Then I check the user
     And I logout from the user
     Examples:
-      | firstName | lastName  | email                  | password     | Phone        |
-      | Hakan     | Bayraker  | hbayraker@petstore.com | Petstore123* | 5555555555   |
+      | firstName | lastName | email                  | password     | Phone        |
+      | Hannah    | Monroe   | hmonroe@petstore.com   | Petstore123* | 5555555555   |

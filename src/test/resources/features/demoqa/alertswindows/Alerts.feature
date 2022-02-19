@@ -13,5 +13,5 @@ Feature: AlertsWindows-Check alert buttons
     Then I click prompt box button and type "<name>"
     And I validate my entered name for prompt box
     Examples:
-      | name   |
-      | Hannah |
+      | name    |
+      | ToolsQA |

@@ -10,5 +10,5 @@ Feature: User-Create user for the petstore then delete it
     And I delete the user
     Then I check that the user is no longer available
     Examples:
-      | firstName | lastName  | email                  | password     | Phone        |
-      | Hakan     | Bayraker  | hbayraker@petstore.com | Petstore123* | 5555555555   |
+      | firstName | lastName  | email                | password     | Phone        |
+      | Hannah    | Monroe    | hmonroe@petstore.com | Petstore123* | 5555555555   |

@@ -11,5 +11,5 @@ Feature: Order-Place an Order then delete it
     Then I delete the order I put
     And I check that order is not available
     Examples:
-      | name  | category  | tag    |
+      | name   | category  | tag   |
       | Waffle | cats     | orange |
