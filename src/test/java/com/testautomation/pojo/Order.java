@@ -13,15 +13,15 @@ import java.time.LocalDate;
 public class Order extends ApiResponse {
 
     @SerializedName("id")
-    int id;
+    private long id;
     @SerializedName("petId")
-    int petId;
+    private int petId;
     @SerializedName("quantity")
-    int quantity;
+    private int quantity;
     @SerializedName("shipDate")
-    String shipDate;
+    private String shipDate;
     @SerializedName("status")
-    String status;
+    private String status;
     @SerializedName("complete")
-    boolean complete;
+    private boolean complete;
 }

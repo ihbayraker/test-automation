@@ -11,10 +11,10 @@ import lombok.ToString;
 public class ApiResponse {
 
     @SerializedName("code")
-    int code;
+    private int code;
     @SerializedName("type")
-    String type;
+    private String type;
     @SerializedName("message")
-    String message;
+    private String message;
 
 }

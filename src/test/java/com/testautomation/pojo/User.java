@@ -11,19 +11,19 @@ import lombok.ToString;
 public class User extends ApiResponse {
 
     @SerializedName("id")
-    int id;
+    private long id;
     @SerializedName("userStatus")
-    int userStatus;
+    private int userStatus;
     @SerializedName("username")
-    String username;
+    private String username;
     @SerializedName("firstName")
-    String firstName;
+    private String firstName;
     @SerializedName("lastName")
-    String lastName;
+    private String lastName;
     @SerializedName("email")
-    String email;
+    private String email;
     @SerializedName("password")
-    String password;
+    private String password;
     @SerializedName("phone")
-    String phone;
+    private String phone;
 }

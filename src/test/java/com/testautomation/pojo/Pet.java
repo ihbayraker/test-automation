@@ -11,19 +11,16 @@ import java.util.List;
 @ToString
 public class Pet extends ApiResponse  {
 
-    private int httpStatusCode;
-    private String responseMessage;
-
     @SerializedName("id")
-    public long id;
+    private long id;
     @SerializedName("category")
-    public Category category;
+    private Category category;
     @SerializedName("name")
-    public String name;
+    private String name;
     @SerializedName("photoUrls")
-    public List<String> photoUrls = null;
+    private List<String> photoUrls = null;
     @SerializedName("tags")
-    public List<Tag> tags = null;
+    private List<Tag> tags = null;
     @SerializedName("status")
-    public String status;
+    private String status;
 }

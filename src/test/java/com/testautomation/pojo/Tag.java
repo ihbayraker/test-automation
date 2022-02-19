@@ -12,7 +12,7 @@ import lombok.ToString;
 public class Tag {
 
     @SerializedName("id")
-    public int id;
+    private int id;
     @SerializedName("name")
-    public String name;
+    private String name;
 }
