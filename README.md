@@ -4,7 +4,7 @@
 
 ![Calliope](https://app.calliope.pro/assets/Calliope_logo-01389101a575495346f8183f224fc57a250a0e72e7f2b4bb8024f0c544a3497a.png)
 
-[Chrome](https://app.calliope.pro/reports/118650/public/86d8b2c9-d9a3-4627-8bbf-0102951b4ab9) ----- [Firefox](https://app.calliope.pro/reports/118651/public/e18e8c09-6a2f-4f5a-a898-90d13b16d4be) ----- [Edge](https://app.calliope.pro/reports/118652/public/3192488b-b7c3-44d7-a665-5c94a10a220e) ----- [Api](https://app.calliope.pro/reports/118649/public/9cf4c11d-1714-46ff-8c1b-56b73805c565)
+[Chrome](https://app.calliope.pro/reports/118650/public/86d8b2c9-d9a3-4627-8bbf-0102951b4ab9) ------ [Firefox](https://app.calliope.pro/reports/118651/public/e18e8c09-6a2f-4f5a-a898-90d13b16d4be) ------ [Edge](https://app.calliope.pro/reports/118652/public/3192488b-b7c3-44d7-a665-5c94a10a220e) ------ [Api](https://app.calliope.pro/reports/118649/public/9cf4c11d-1714-46ff-8c1b-56b73805c565)
 
 - This project uses Selenium with BDD Framework to automate web and api testing
 - It's configured to run several web and api tests out of the box.
