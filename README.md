@@ -69,7 +69,6 @@ $ mvn clean test -Dcucumber.reporting.skip=false -Dcucumber.filter.tags=@booksto
 - [x] Api testing support
 - [x] Petstore api tests
 - [ ] Safari driver Support
-- [ ] Browserstack support
 - [ ] Slack Integration
 - [ ] Report Mailing support
 - [ ] Dynamic scenario execution
