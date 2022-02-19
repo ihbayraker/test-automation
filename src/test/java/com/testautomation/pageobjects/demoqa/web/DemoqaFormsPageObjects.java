@@ -90,6 +90,9 @@ public class DemoqaFormsPageObjects extends PageObject implements DemoqaFormsObj
         Helper.generateDummyImage(500,500,"img");
         String filePath = targetPath + File.separator + "img.jpg";
         Helper.sendKeysByXpath(PropertiesUtils.getEnvironmentProperty("formUploadPictureXpath"),browser,filePath,true);
+
+        File file = new File(filePath);
+        file.delete();
     }
 
     @Override
