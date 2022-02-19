@@ -4,10 +4,7 @@ import com.testautomation.drivers.DriverFactory;
 import com.testautomation.drivers.DriverManager;
 import com.testautomation.stepdef.Hooks;
 import io.cucumber.java.Scenario;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.*;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -23,7 +20,13 @@ public class WebDriverUtils {
     public static WebDriver startDriver() throws Exception {
         if(browser==null){
             DriverManager driverManager = DriverFactory.getDriverManager();
-            browser = driverManager.getWebDriver();
+
+            try{
+                browser = driverManager.getWebDriver();
+            }catch (SessionNotCreatedException e){
+                browser = driverManager.getWebDriver();
+            }
+
             manageDriver(20,10);
         }
         return browser;
