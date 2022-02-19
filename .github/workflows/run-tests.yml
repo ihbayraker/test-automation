@@ -5,7 +5,7 @@ on:
      
 jobs:
   test:
-    name: Running all tests
+    name: Running demo tests
     runs-on: windows-latest
     
     steps:
@@ -16,6 +16,16 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        
+    - name: Run tests with Chrome
+      run: mvn clean  test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@petstore"
+      shell: cmd
+    - name: Upload results to Calliope
+      run: curl -X POST
+        -H "x-api-key:${{ secrets.API_KEY }}"
+        -H "multipart/form-data"
+        -F "file[]=@target/cucumber.json"
+        "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=api&tag[]=petstore"
         
     - name: Run tests with Chrome
       run: mvn clean  test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="chrome"
