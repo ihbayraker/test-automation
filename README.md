@@ -74,7 +74,5 @@ $ mvn clean test -Dcucumber.reporting.skip=false -Dcucumber.filter.tags=@booksto
 - [ ] Report Mailing support
 - [ ] Dynamic scenario execution
 
-# Authors
-
 
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ismail-hakan-bayraker/) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
