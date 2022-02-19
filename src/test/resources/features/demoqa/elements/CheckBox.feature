@@ -1,4 +1,4 @@
-@all @demoqa @elements
+@all @web @demoqa @elements
 Feature: Elements-Toggle Check Boxes
 
   Unwinds the nodes in checkbox page then toggles some

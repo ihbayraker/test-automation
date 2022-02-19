@@ -1,6 +1,7 @@
 package com.testautomation.utils;
 
 import io.cucumber.java.Scenario;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,6 +11,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.file.FileSystems;
 import java.time.Duration;
 import java.util.ArrayList;
 
@@ -93,8 +95,10 @@ public class Helper {
     }
 
     public static void generateDummyImage(int width, int height, String name) throws Exception {
+        String targetPath = FileSystems.getDefault().getPath("").toAbsolutePath() + File.separator + "target";
+
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
-        ImageIO.write(image, "jpg", new FileOutputStream(System.getProperty("user.dir") + File.separator + "target" + File.separator + name+".jpg"));
+        ImageIO.write(image, "jpg", new FileOutputStream(targetPath + File.separator + name+".jpg"));
     }
 
     public static ArrayList<String> getWindowHandlers(WebDriver driver) throws Exception {
@@ -142,5 +146,9 @@ public class Helper {
     public static void SwitchTab(int tab, WebDriver driver) throws Exception {
         ArrayList<String> windowHandles = getWindowHandlers(driver);
         driver.switchTo().window(windowHandles.get(tab));
+    }
+
+    public static String generateString(int i){
+        return RandomStringUtils.randomAlphanumeric(i);
     }
 }

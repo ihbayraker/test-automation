@@ -1,4 +1,4 @@
-@all @demoqa @bookstore
+@all @web @demoqa @bookstore
 Feature: Bookstore-Check login fail
 
   Tries to login to bookstore with false credentials

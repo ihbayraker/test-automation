@@ -1,4 +1,4 @@
-@all @demoqa @elements
+@all @web @demoqa @elements
 Feature: Elements-Fill the Text Boxes then Submit
 
   Fills the text boxes in text box page with given example then submits

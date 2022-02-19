@@ -1,4 +1,4 @@
-@all @demoqa @elements
+@all @web @demoqa @elements
 Feature: Elements-Add a new entry to Web Table
 
   Adds a new entry to the table in table page with the values given in the example

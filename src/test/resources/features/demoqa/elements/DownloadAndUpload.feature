@@ -1,4 +1,4 @@
-@all @demoqa @elements
+@all @web @demoqa @elements
 Feature: Elements-Download then upload files
 
   Downloads the file in download and upload page

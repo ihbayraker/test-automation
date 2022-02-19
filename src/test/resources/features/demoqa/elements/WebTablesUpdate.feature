@@ -1,4 +1,4 @@
-@all @demoqa @elements
+@all @web @demoqa @elements
 Feature: Elements-Update an existing entry in Web Table
 
   Updates one of the default rows in table in table page with given example

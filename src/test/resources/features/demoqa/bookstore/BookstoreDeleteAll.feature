@@ -1,4 +1,4 @@
-@all @demoqa @bookstore
+@all @web @demoqa @bookstore
 Feature: Bookstore-Add books then delete all
 
   Creates a new account then logins to bookstore

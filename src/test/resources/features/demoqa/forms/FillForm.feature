@@ -1,4 +1,4 @@
-@all @demoqa @forms
+@all @web @demoqa @forms
 Feature: Forms-Fill student registration form
 
   Fills the registration form in forms page with given example

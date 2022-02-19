@@ -17,6 +17,10 @@ public class Hooks {
         return scenario.getName();
     }
 
+    public static String getScenarioTags(){
+        return scenario.getSourceTagNames().toString();
+    }
+
     @Before
     public void beforeScenario(Scenario scenario) {
         Hooks.scenario = scenario;

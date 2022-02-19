@@ -1,4 +1,4 @@
-@all @demoqa @elements
+@all @web @demoqa @elements
 Feature: Elements-Click on all types of buttons
 
   Checks all buttons in buttons page

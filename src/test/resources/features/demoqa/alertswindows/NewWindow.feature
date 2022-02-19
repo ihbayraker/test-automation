@@ -1,4 +1,4 @@
-@all @demoqa @alertswindows
+@all @web @demoqa @alertswindows
 Feature: AlertsWindows-Open a new window via button
 
   Checks the new window button in browser windows page

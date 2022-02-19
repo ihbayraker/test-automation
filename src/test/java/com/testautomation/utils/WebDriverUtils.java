@@ -2,6 +2,7 @@ package com.testautomation.utils;
 
 import com.testautomation.drivers.DriverFactory;
 import com.testautomation.drivers.DriverManager;
+import com.testautomation.stepdef.Hooks;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -46,17 +47,20 @@ public class WebDriverUtils {
         }
     }
     public static void takeScreenshot(Scenario scenario, String name) throws Exception {
-        File screenshot = ((TakesScreenshot)browser).getScreenshotAs(OutputType.FILE);
-        BufferedImage img = ImageIO.read(screenshot);
+        if(Hooks.getScenarioTags().contains("@web")){
 
-        BufferedImage jpeg = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_RGB);
-        jpeg.createGraphics().drawImage(img, 0, 0, Color.WHITE, null);
+            File screenshot = ((TakesScreenshot)browser).getScreenshotAs(OutputType.FILE);
+            BufferedImage img = ImageIO.read(screenshot);
 
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        ImageIO.write(jpeg, "jpg", bos);
-        byte[] image = bos.toByteArray();
+            BufferedImage jpeg = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_RGB);
+            jpeg.createGraphics().drawImage(img, 0, 0, Color.WHITE, null);
 
-        scenario.attach(image,"image/jpeg",name);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            ImageIO.write(jpeg, "jpg", bos);
+            byte[] image = bos.toByteArray();
+
+            scenario.attach(image,"image/jpeg",name);
+        }
     }
 
     public static void killDrivers() throws Exception {

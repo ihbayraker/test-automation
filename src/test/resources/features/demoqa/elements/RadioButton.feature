@@ -1,4 +1,4 @@
-@all @demoqa @elements
+@all @web @demoqa @elements
 Feature: Elements-Check Radio Buttons
 
   Checks all radio buttons in radio button page
