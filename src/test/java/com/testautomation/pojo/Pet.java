@@ -9,13 +9,13 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Pet {
+public class Pet extends ApiResponse  {
 
     private int httpStatusCode;
     private String responseMessage;
 
     @SerializedName("id")
-    public int id;
+    public long id;
     @SerializedName("category")
     public Category category;
     @SerializedName("name")

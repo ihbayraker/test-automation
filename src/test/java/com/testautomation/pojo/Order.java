@@ -5,10 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @ToString
-public class Order {
+public class Order extends ApiResponse {
 
     @SerializedName("id")
     int id;
@@ -17,7 +19,7 @@ public class Order {
     @SerializedName("quantity")
     int quantity;
     @SerializedName("shipDate")
-    int shipDate;
+    String shipDate;
     @SerializedName("status")
     String status;
     @SerializedName("complete")

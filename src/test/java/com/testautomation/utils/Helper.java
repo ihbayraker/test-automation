@@ -151,4 +151,8 @@ public class Helper {
     public static String generateString(int i){
         return RandomStringUtils.randomAlphanumeric(i);
     }
+
+    public static int generateInteger(int i){
+        return Integer.parseInt(RandomStringUtils.randomNumeric(i));
+    }
 }

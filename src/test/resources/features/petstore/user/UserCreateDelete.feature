@@ -1,9 +1,9 @@
 @all @api @petstore @user
-Feature: User-Add and delete user on petstore
+Feature: User-Create user for the petstore then delete it
 
-  Creates a new user user for the petstore then deletes it
+  Creates a new user for the petstore then deletes it
 
-  Scenario Outline: Add and delete user on petstore
+  Scenario Outline: Create user for the petstore then delete it
     Given I create a new user with name:"<firstName>", lastName:"<lastName>", email:"<email>", password:"<password>", number:"<Phone>",
     Then I check the user
     And I login to my user

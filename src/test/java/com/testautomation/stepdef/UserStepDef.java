@@ -35,14 +35,14 @@ public class UserStepDef {
         this.phone = phone;
 
         ApiResponse apiResponse = userRequest.createUser(username,firstName,lastname,email,password,phone);
-        Assert.assertEquals("Account creation was a failure", 200, apiResponse.getCode());
+        Assert.assertEquals("User creation was a failure", 200, apiResponse.getCode());
     }
 
     @Then("I check the user")
     public void iCheckTheUser() throws Exception {
         User user = userRequest.getUser(username,10);
 
-        Assert.assertEquals("Could not find the account", 200, user.getCode());
+        Assert.assertEquals("Could not find the user", 200, user.getCode());
         Assert.assertEquals("First name of the user was wrong", firstName, user.getFirstName());
         Assert.assertEquals("Last name of the user was wrong", lastname, user.getLastName());
         Assert.assertEquals("email of the user was wrong", email, user.getEmail());
@@ -82,5 +82,11 @@ public class UserStepDef {
 
         ApiResponse apiResponse = userRequest.updateUser(oldUsername,username, firstName, lastname, email, password, phone);
         Assert.assertEquals("Could not update the user", 200, apiResponse.getCode());
+    }
+
+    @And("I logout from the user")
+    public void iLogoutFromTheUser() throws Exception {
+        ApiResponse apiResponse = userRequest.logoutUser();
+        Assert.assertEquals("Login was a failure", 200, apiResponse.getCode());
     }
 }

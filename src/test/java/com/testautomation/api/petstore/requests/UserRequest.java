@@ -96,11 +96,9 @@ public class UserRequest extends Request implements UserRequestInterface {
             if(response.statusCode()==200){
                 Helper.scenarioWrite(Hooks.getScenario(), response.body(), "Response");
                 return true;
-            }else{
-                Helper.scenarioWrite(Hooks.getScenario(), "{\"code\":404}", "Response");
             }
         }
-
+        Helper.scenarioWrite(Hooks.getScenario(), "{\"code\":404 Not Found}", "Response");
         return false;
     }
 }
