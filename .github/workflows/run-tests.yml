@@ -17,7 +17,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Run tests with Chrome
+    - name: Run api tests
       run: mvn clean  test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@petstore"
       shell: cmd
     - name: Upload results to Calliope
@@ -27,7 +27,7 @@ jobs:
         -F "file[]=@target/cucumber.json"
         "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=api&tag[]=petstore"
         
-    - name: Run tests with Chrome
+    - name: Run web tests with Chrome
       run: mvn clean  test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="chrome"
       shell: cmd
     - name: Upload results to Calliope
@@ -37,7 +37,7 @@ jobs:
         -F "file[]=@target/cucumber.json"
         "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=chrome&tag[]=demoqa"
         
-    - name: Run tests with Firefox
+    - name: Run web tests with Firefox
       run: mvn clean test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="firefox"
       shell: cmd
     - name: Upload results to Calliope
@@ -47,7 +47,7 @@ jobs:
         -F "file[]=@target/cucumber.json"
         "https://app.calliope.pro/api/v2/profile/${{ secrets.PROFILE_ID }}/import/cucumber?tag[]=windows&tag[]=firefox&tag[]=demoqa"
         
-    - name: Run tests with Edge
+    - name: Run web tests with Edge
       run: mvn clean test -Dcucumber.reporting.skip="true" -Dcucumber.filter.tags="@demoqa" -Dbrowser="edge"
       shell: cmd
     - name: Upload results to Calliope
