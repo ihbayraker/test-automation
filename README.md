@@ -18,7 +18,7 @@ $ mvn clean test exec:java
 | ------ | ------ | ------ |
 | mvn clean test | N/A | Mandatory, runs the tests. |
 | exec:java | N/A | Optional, Fires up the reports automatically, should  only used in a local environment. |
-| Dcucumber.filter.tags=@all | @all, @demoqa, @elements, @forms, @bookstore, @alertswindows  | Optional, specify the feature tags to manipulate test scope, By default **@all** is run.  |
+| Dcucumber.filter.tags=@all | @all, @web, @api @demoqa, @petstore, @elements, @forms, @bookstore, @alertswindows  | Optional, specify the feature tags to manipulate test scope, By default **@all** is run.  |
 | Dcucumber.reporting.skip=false | true,false | Optional, determines if the report generation step is skipped or not, by default its **false**. |
 | Dbrowser=chrome | chrome, firefox, opera, edge | Optional, determines the browser  test will be run at, by default its **chrome**. |
 | Dheadless=true | true, false | Optional, determines if the browser will be run headless or not, by default its **true**. |
