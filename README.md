@@ -1,6 +1,6 @@
 # Getting Started
 
-[![workflow](https://github.com/ihbayraker/test-automation/actions/workflows/run-tests.yml/badge.svg)](https://github.com/ihbayraker/test-automation/actions/runs/1869686019)  [![Netlify](https://api.netlify.com/api/v1/badges/f51c65b7-63f5-4627-911a-9e5b3b1125d5/deploy-status)](https://demo-test-automation-results.netlify.app) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/ihbayraker/test-automation/blob/main/LICENSE)
+[![workflow](https://github.com/ihbayraker/test-automation/actions/workflows/run-tests.yml/badge.svg)](https://github.com/ihbayraker/test-automation/actions)  [![Netlify](https://api.netlify.com/api/v1/badges/f51c65b7-63f5-4627-911a-9e5b3b1125d5/deploy-status)](https://demo-test-automation-results.netlify.app) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/ihbayraker/test-automation/blob/main/LICENSE)
 
 ![Calliope](https://app.calliope.pro/assets/Calliope_logo-01389101a575495346f8183f224fc57a250a0e72e7f2b4bb8024f0c544a3497a.png)
 
