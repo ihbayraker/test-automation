@@ -24,7 +24,7 @@ public class WebDriverUtils {
 
             try{
                 browser = driverManager.getWebDriver();
-            }catch (SessionNotCreatedException e){
+            }catch (Exception e){
                 browser = driverManager.getWebDriver();
             }
 
