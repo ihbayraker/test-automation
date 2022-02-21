@@ -33,12 +33,16 @@ public class WebDriverUtils {
         return browser;
     }
 
-    public static void manageDriver(int pageLoadTimeout, int implictWait, int width, int height) {
+    public static void manageDriver(int pageLoadTimeout, int implictWait, int width, int height) throws Exception {
         browser.manage().deleteAllCookies();
-        browser.manage().window().setSize(new Dimension(width, height));
-        browser.manage().window().maximize();
         browser.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(pageLoadTimeout));
         browser.manage().timeouts().implicitlyWait(Duration.ofSeconds(implictWait));
+
+        if(PropertiesUtils.getPomProperty("headless").equals("true")){
+            browser.manage().window().setSize(new Dimension(width, height));
+        }else {
+            browser.manage().window().maximize();
+        }
     }
 
     public static void quitWebDriver(){
