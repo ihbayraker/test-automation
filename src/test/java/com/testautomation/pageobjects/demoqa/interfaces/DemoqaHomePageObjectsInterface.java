@@ -4,6 +4,8 @@ public interface DemoqaHomePageObjectsInterface extends PageObjectInterface {
 
     void navigateToHomepage();
 
+    void closeGoogleAd();
+
     void navigateToElements();
 
     void navigateToForms();

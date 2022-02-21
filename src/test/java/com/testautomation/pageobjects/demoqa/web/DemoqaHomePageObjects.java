@@ -14,7 +14,14 @@ public class DemoqaHomePageObjects extends PageObject implements DemoqaHomePageO
     @Override
     public void navigateToHomepage() {
         browser.navigate().to(PropertiesUtils.getEnvironmentProperty("homepage"));
-        Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("googleAdXpath"),browser);
+        closeGoogleAd();
+    }
+
+    @Override
+    public void closeGoogleAd() {
+        try{
+            Helper.clickByXpath(PropertiesUtils.getEnvironmentProperty("googleAdXpath"),browser);
+        }catch (Exception ignored){}
     }
 
     @Override

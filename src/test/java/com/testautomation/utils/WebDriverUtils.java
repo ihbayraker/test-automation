@@ -5,6 +5,7 @@ import com.testautomation.drivers.DriverManager;
 import com.testautomation.stepdef.Hooks;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.*;
+import org.openqa.selenium.Dimension;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -27,13 +28,14 @@ public class WebDriverUtils {
                 browser = driverManager.getWebDriver();
             }
 
-            manageDriver(20,10);
+            manageDriver(20,10,1920,1080);
         }
         return browser;
     }
 
-    public static void manageDriver(int pageLoadTimeout, int implictWait) {
+    public static void manageDriver(int pageLoadTimeout, int implictWait, int width, int height) {
         browser.manage().deleteAllCookies();
+        browser.manage().window().setSize(new Dimension(width, height));
         browser.manage().window().maximize();
         browser.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(pageLoadTimeout));
         browser.manage().timeouts().implicitlyWait(Duration.ofSeconds(implictWait));
