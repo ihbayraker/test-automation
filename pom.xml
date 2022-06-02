@@ -15,17 +15,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <selenium.version>4.1.2</selenium.version>
-        <cucumber.version>7.2.3</cucumber.version>
-        <junit.version>5.8.2</junit.version>
-        <webdrivermanager.version>5.1.0</webdrivermanager.version>
-        <slf4j.version>2.0.0-alpha6</slf4j.version>
+        <selenium.version>4.2.1</selenium.version>
+        <cucumber.version>7.3.4</cucumber.version>
+        <junit.version>5.9.0-M1</junit.version>
+        <webdrivermanager.version>5.2.0</webdrivermanager.version>
+        <slf4j.version>2.0.0-alpha7</slf4j.version>
         <surefire.version>3.0.0-M5</surefire.version>
         <properties.version>1.0.0</properties.version>
         <report.version>5.6.2</report.version>
-        <lombok.version>1.18.22</lombok.version>
-        <json.version>20211205</json.version>
-        <methanol.version>1.6.0</methanol.version>
+        <lombok.version>1.18.24</lombok.version>
+        <json.version>20220320</json.version>
+        <methanol.version>1.7.0</methanol.version>
 
         <cucumber.reporting.skip>false</cucumber.reporting.skip>
         <exec.mainClass>com.testautomation.Main</exec.mainClass>
