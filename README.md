@@ -2,10 +2,6 @@
 
 [![workflow](https://github.com/ihbayraker/test-automation/actions/workflows/run-tests.yml/badge.svg)](https://github.com/ihbayraker/test-automation/actions)  [![Netlify](https://api.netlify.com/api/v1/badges/f51c65b7-63f5-4627-911a-9e5b3b1125d5/deploy-status)](https://demo-test-automation-results.netlify.app) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/ihbayraker/test-automation/blob/main/LICENSE)
 
-![Calliope](https://app.calliope.pro/assets/Calliope_logo-9edf1b7034d5ba4154793287ec181bc98f8fd368d2875a6c59b77dc85298ba99.png)
-
-[Chrome](https://app.calliope.pro/reports/118650/public/86d8b2c9-d9a3-4627-8bbf-0102951b4ab9) ------ [Firefox](https://app.calliope.pro/reports/118651/public/e18e8c09-6a2f-4f5a-a898-90d13b16d4be) ------ [Edge](https://app.calliope.pro/reports/118652/public/3192488b-b7c3-44d7-a665-5c94a10a220e) ------ [Api](https://app.calliope.pro/reports/118649/public/9cf4c11d-1714-46ff-8c1b-56b73805c565)
-
 - This project uses Selenium with BDD Framework to automate web and api testing
 - It's configured to run several web and api tests out of the box.
 - The web test are run on [ToolQA](https://demoqa.com) while api tests use [Petstore](https://petstore.swagger.io/).
